@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Zina Ben Belgacem | Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#04060F;--s1:#0A0D1A;--s2:#0F1222;
+  --p:#6EE7FF;--a:#B8A9FF;--a2:#FF7F9A;
+  --t:#E8ECF4;--m:#7A8BA8;
+  --b:rgba(110,231,255,0.12);--b2:rgba(255,255,255,0.07);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--t);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden;}
+
+/* CURSOR */
+#cg{position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(110,231,255,0.04) 0%,transparent 70%);pointer-events:none;transform:translate(-50%,-50%);transition:left .5s ease,top .5s ease;z-index:0;}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,6,15,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--b2);}
+.logo{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--t);text-decoration:none;}
+.logo span{color:var(--p);}
+nav ul{display:flex;gap:32px;list-style:none;align-items:center;}
+nav a{color:var(--m);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .3s;}
+nav a:hover{color:var(--p);}
+.ncta{padding:7px 18px;border:1px solid var(--b);border-radius:8px;color:var(--p)!important;}
+.ncta:hover{background:rgba(110,231,255,0.08)!important;}
+
+/* HERO */
+header{min-height:100vh;padding:130px 60px 90px;display:flex;align-items:center;position:relative;overflow:hidden;}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(110,231,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(110,231,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hg1{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(110,231,255,0.07) 0%,transparent 65%);top:-150px;right:-100px;pointer-events:none;}
+.hg2{position:absolute;width:450px;height:450px;background:radial-gradient(circle,rgba(184,169,255,0.06) 0%,transparent 65%);bottom:0;left:80px;pointer-events:none;}
+.hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr auto;gap:80px;align-items:center;}
+
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border:1px solid rgba(110,231,255,.2);border-radius:100px;font-size:.75rem;color:var(--p);letter-spacing:.04em;margin-bottom:28px;background:rgba(110,231,255,.05);}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--p);animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+
+h1{font-family:'Syne',sans-serif;font-size:4rem;font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:10px;}
+.hname{font-family:'Syne',sans-serif;font-size:1.55rem;font-weight:600;background:linear-gradient(135deg,var(--p),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;}
+.hsub{color:var(--m);font-size:.94rem;font-weight:300;max-width:490px;margin-bottom:36px;line-height:1.9;}
+.hact{display:flex;gap:14px;flex-wrap:wrap;}
+
+.btn1{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:var(--p);color:#04060F;font-weight:700;font-size:.87rem;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif;}
+.btn1:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(110,231,255,.25);}
+.btn2{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:transparent;color:var(--t);font-weight:500;font-size:.87rem;border-radius:10px;text-decoration:none;border:1px solid var(--b2);transition:all .3s;}
+.btn2:hover{border-color:var(--b);background:rgba(255,255,255,.03);}
+
+/* AVATAR */
+.hvisual{display:flex;flex-direction:column;align-items:center;gap:22px;}
+.awrap{position:relative;width:210px;height:210px;}
+.aring{position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(from 0deg,var(--p),var(--a),var(--a2),var(--p));animation:spin 7s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.amask{position:absolute;inset:2px;border-radius:50%;background:var(--bg);}
+.aphoto{position:absolute;inset:6px;border-radius:50%;overflow:hidden;background:var(--s2);display:flex;align-items:center;justify-content:center;}
+.aphoto img{width:100%;height:100%;object-fit:cover;object-position:top center;}
+.ainit{font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,var(--p),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hstats{display:flex;gap:12px;}
+.spill{padding:10px 14px;background:var(--s2);border:1px solid var(--b2);border-radius:12px;text-align:center;min-width:72px;}
+.snum{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--p);line-height:1;margin-bottom:4px;}
+.slbl{font-size:.62rem;color:var(--m);text-transform:uppercase;letter-spacing:.07em;}
+
+/* SHARED */
+.divider{max-width:1200px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--b2) 30%,var(--b2) 70%,transparent);}
+section{padding:90px 60px;max-width:1200px;margin:0 auto;}
+.slabel{font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;color:var(--p);font-weight:500;margin-bottom:10px;}
+.stitle{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:46px;line-height:1.15;}
+
+/* ABOUT STRIP */
+.astrip{background:var(--s1);border-top:1px solid var(--b2);border-bottom:1px solid var(--b2);padding:48px 60px;}
+.ainner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.acard{padding:24px;border:1px solid var(--b2);border-radius:16px;background:var(--s2);transition:border-color .3s;}
+.acard:hover{border-color:var(--b);}
+.aicon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:12px;}
+.acard h3{font-family:'Syne',sans-serif;font-size:.93rem;font-weight:700;margin-bottom:7px;}
+.acard p{color:var(--m);font-size:.83rem;line-height:1.75;}
+#form-status {
+  font-size: .8rem;
+  margin-top: 10px;
+  color: var(--m);
+}
+
+.bsub.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.bsub.loading::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  margin-left: 10px;
+  border: 2px solid #000;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.finp:invalid {
+  border-color: rgba(255,127,154,.5);
+}
+
+.finp:focus {
+  transform: translateY(-2px);
+  transition: 0.2s;
+}
+/* PROJECTS */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.pcard{background:var(--s1);border:1px solid var(--b2);border-radius:18px;overflow:hidden;transition:all .4s cubic-bezier(.23,1,.32,1);position:relative;}
+.pcard::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(110,231,255,.04),rgba(184,169,255,.03));opacity:0;transition:opacity .4s;border-radius:18px;pointer-events:none;}
+.pcard:hover{transform:translateY(-7px);border-color:rgba(110,231,255,.22);box-shadow:0 24px 50px rgba(0,0,0,.4);}
+.pcard:hover::after{opacity:1;}
+.pthumb{height:155px;position:relative;display:flex;align-items:center;justify-content:center;}
+.pemoji{font-size:2.6rem;opacity:.17;}
+.pbar{position:absolute;bottom:0;left:0;right:0;height:2px;}
+.pbody{padding:20px;position:relative;z-index:1;}
+.pnum{font-size:.67rem;color:var(--m);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;}
+.ptitle{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:9px;}
+.pdesc{color:var(--m);font-size:.83rem;line-height:1.72;margin-bottom:14px;}
+.tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{padding:3px 9px;border-radius:6px;font-size:.68rem;font-weight:500;background:rgba(110,231,255,.08);color:var(--p);border:1px solid rgba(110,231,255,.12);}
+.tag.v{background:rgba(184,169,255,.08);color:var(--a);border-color:rgba(184,169,255,.12);}
+.tag.r{background:rgba(255,127,154,.08);color:var(--a2);border-color:rgba(255,127,154,.12);}
+
+/* SKILLS */
+.skwrap{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:start;}
+.sgroup{margin-bottom:26px;}
+.scat{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--m);margin-bottom:10px;font-weight:500;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{padding:7px 13px;border-radius:9px;font-size:.79rem;font-weight:500;border:1px solid var(--b2);background:var(--s1);color:var(--t);transition:all .25s;cursor:default;}
+.chip:hover{border-color:rgba(110,231,255,.25);background:rgba(110,231,255,.05);color:var(--p);transform:translateY(-2px);}
+
+/* CERTS */
+.clist{display:flex;flex-direction:column;gap:9px;}
+.citem{display:flex;align-items:center;gap:12px;padding:11px 15px;background:var(--s1);border:1px solid var(--b2);border-radius:12px;transition:border-color .3s;}
+.citem:hover{border-color:rgba(110,231,255,.2);}
+.cicon{width:32px;height:32px;border-radius:8px;background:rgba(110,231,255,.08);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;}
+.ctext{font-size:.81rem;color:var(--t);line-height:1.4;}
+
+/* LANGS & QUALS */
+.lrow{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;}
+.lpill{padding:8px 16px;border-radius:10px;border:1px solid var(--b2);background:var(--s1);font-size:.8rem;display:flex;align-items:center;gap:8px;}
+.ldot{width:7px;height:7px;border-radius:50%;}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+.qitem{padding:9px 13px;border-radius:10px;border:1px solid var(--b2);background:var(--s1);font-size:.8rem;color:var(--m);display:flex;align-items:center;gap:8px;}
+.qitem::before{content:'✦';color:var(--a);font-size:.6rem;}
+
+/* EXPERIENCE */
+.egrid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+.ctitle{font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;margin-bottom:26px;color:var(--m);text-transform:uppercase;letter-spacing:.1em;}
+.tl{position:relative;padding-left:26px;}
+.tl::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--p),transparent);}
+.ti{position:relative;margin-bottom:32px;}
+.ti::before{content:'';position:absolute;left:-30px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--p);box-shadow:0 0 10px rgba(110,231,255,.5);}
+.tdate{font-size:.7rem;color:var(--p);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.trole{font-family:'Syne',sans-serif;font-size:.96rem;font-weight:700;margin-bottom:2px;}
+.tplace{color:var(--m);font-size:.81rem;margin-bottom:5px;}
+.tdesc{color:var(--m);font-size:.8rem;line-height:1.72;}
+
+/* CONTACT */
+.cwrap{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start;}
+.cinfo h3{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:700;margin-bottom:12px;}
+.cinfo p{color:var(--m);font-size:.88rem;line-height:1.85;margin-bottom:26px;}
+.clinks{display:flex;flex-direction:column;gap:10px;}
+.clink{display:flex;align-items:center;gap:13px;color:var(--t);text-decoration:none;padding:12px 15px;border:1px solid var(--b2);border-radius:12px;transition:all .3s;background:var(--s1);font-size:.86rem;}
+.clink:hover{border-color:var(--b);background:rgba(110,231,255,.04);color:var(--p);transform:translateX(4px);}
+.clico{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cllbl{font-size:.67rem;color:var(--m);margin-bottom:1px;}
+.cform{display:flex;flex-direction:column;gap:13px;}
+.fg{display:flex;flex-direction:column;gap:4px;}
+.flbl{font-size:.7rem;color:var(--m);text-transform:uppercase;letter-spacing:.08em;}
+.finp{padding:12px 14px;border-radius:11px;border:1px solid var(--b2);background:var(--s1);color:var(--t);font-family:'DM Sans',sans-serif;font-size:.87rem;outline:none;transition:border-color .3s,background .3s;}
+.finp:focus{border-color:rgba(110,231,255,.3);background:rgba(110,231,255,.03);}
+.finp::placeholder{color:var(--m);opacity:.5;}
+textarea.finp{min-height:125px;resize:vertical;}
+.bsub{padding:13px 26px;background:var(--p);color:#04060F;font-weight:700;font-size:.87rem;border-radius:11px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .3s;}
+.bsub:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(110,231,255,.25);}
+
+/* FOOTER */
+footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36px;}
+.finner{max-width:1200px;margin:0 auto;}
+.ftop{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:60px;padding-bottom:46px;border-bottom:1px solid var(--b2);}
+.fbname{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:800;letter-spacing:-.02em;margin-bottom:11px;}
+.fbname span{color:var(--p);}
+.fb p{color:var(--m);font-size:.84rem;line-height:1.85;max-width:300px;margin-bottom:24px;}
+.srow{display:flex;gap:10px;}
+.sbtn{width:42px;height:42px;border-radius:11px;border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all .3s;background:var(--s2);}
+.sbtn:hover{transform:translateY(-3px);}
+.sbtn.li:hover{background:rgba(10,102,194,.15);border-color:rgba(10,102,194,.35);}
+.sbtn.fb2:hover{background:rgba(24,119,242,.13);border-color:rgba(24,119,242,.35);}
+.sbtn.gh:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);}
+.fcol h4{font-family:'Syne',sans-serif;font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px;color:var(--t);}
+.fcol ul{list-style:none;}
+.fcol li{margin-bottom:9px;}
+.fcol a{color:var(--m);text-decoration:none;font-size:.84rem;transition:color .3s;}
+.fcol a:hover{color:var(--p);}
+.fbot{display:flex;justify-content:space-between;align-items:center;padding-top:26px;}
+.fbot p{color:var(--m);font-size:.78rem;}
+.made{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--m);}
+.heart{color:var(--a2);}
+.pthumb {
+  position: relative;
+  height: 160px; /* 🔥 taille du cadre (ajuste 140–200px) */
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  background: linear-gradient(135deg,#060F22,#0D1A38);
+}
+
+.pthumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* remplit le cadre sans déformer */
+}
+
+.pbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+}
+/* ANIM */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
+.fu{opacity:0;animation:fadeUp .8s cubic-bezier(.23,1,.32,1) forwards;}
+.d1{animation-delay:.05s;}.d2{animation-delay:.15s;}.d3{animation-delay:.25s;}.d4{animation-delay:.38s;}.d5{animation-delay:.52s;}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:0 22px;}nav ul{gap:18px;}
+  header{padding:100px 22px 60px;}
+  .hero-inner{grid-template-columns:1fr;}
+  h1{font-size:2.7rem;}
+  .hvisual{display:none;}
+  section{padding:60px 22px;}
+  .astrip{padding:36px 22px;}.ainner{grid-template-columns:1fr;}
+  .pgrid{grid-template-columns:1fr;}
+  .skwrap{grid-template-columns:1fr;gap:40px;}
+  .egrid{grid-template-columns:1fr;gap:36px;}
+  .cwrap{grid-template-columns:1fr;gap:38px;}
+  footer{padding:40px 22px 28px;}.ftop{grid-template-columns:1fr;gap:32px;}
+  .fbot{flex-direction:column;gap:8px;text-align:center;}
+  .pcard {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0b1224;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.pthumb {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  background: linear-gradient(135deg,#060F22,#0D1A38);
+}
+
+.pthumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* overlay play */
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: white;
+  background: rgba(0,0,0,0.25);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* hover effects */
+.pthumb:hover .play-overlay {
+  opacity: 1;
+}
+
+.pthumb:hover video {
+  transform: scale(1.05);
+}
+
+.pbar {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg,#38BDF8,#A78BFA);
+}
+}
+</style>
+</head>
+
+<body>
+  
+<div id="cg"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Zina<span>.</span>dev</a>
+  <ul>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#parcours">Parcours</a></li>
+    <li><a href="#contact" class="ncta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header>
+  <div class="hgrid"></div>
+  <div class="hg1"></div>
+  <div class="hg2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="badge fu d1"><span class="dot"></span>Disponible · Sfax, Tunisie</div>
+      <h1 class="fu d2">Full Stack<br>Developer</h1>
+      <div class="hname fu d3">Zina Ben Belgacem</div>
+      <p class="hsub fu d4">
+        Étudiante en 2ème année Master Génie Logiciel · Développeuse web & mobile passionnée par l'IA, les systèmes distribués et la création d'applications robustes avec Spring Boot, Angular, React et Flutter.
+      </p>
+      <div class="hact fu d5">
+        <a href="./public/mon cv .pdf" class="btn1" download>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+
+          Télécharger CV
+        </a>
+        <a href="#projets" class="btn2">Voir mes projets →</a>
+      </div>
+    </div>
+    <div class="hvisual fu d3">
+      <div class="awrap">
+        <div class="aring"></div>
+        <div class="amask"></div>
+        <div class="aphoto">
+          <!-- Photo du CV de Zina -->
+          <img src="./public/449610093_7724964190956215_4291587629864170296_n.jpg"
+               alt="Zina Ben Belgacem"
+               id="avatarImg"/>
+        </div>
+      </div>
+      <div class="hstats">
+        <div class="spill"><div class="snum">M2</div><div class="slbl">Master GL</div></div>
+        <div class="spill"><div class="snum">3+</div><div class="slbl">Expériences</div></div>
+        <div class="spill"><div class="snum">5+</div><div class="slbl">Certifications</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT STRIP -->
+<div class="astrip">
+  <div class="ainner">
+    <div class="acard">
+      <div class="aicon" style="background:rgba(110,231,255,.08);">🎓</div>
+      <h3>Formation</h3>
+      <p>2ème année Master Génie Logiciel · ISET Sfax<br>Licence Développement des Systèmes d'Information — 2023/2024</p>
+    </div>
+   <div class="acard">
+  <div class="aicon" style="background:rgba(184,169,255,.08);">💻</div>
+  <h3>Développement Web, Mobile & IA</h3>
+  <p>
+    Conception d’applications web et mobiles modernes, intégration d’intelligence artificielle,
+    développement d’APIs performantes et mise en place d’architectures évolutives (microservices).
+  </p>
+</div>
+    <div class="acard">
+      <div class="aicon" style="background:rgba(255,127,154,.08);">📍</div>
+      <h3>Localisation</h3>
+      <p>Sfax, Tunisie · Disponible en présentiel et en remote · Ouverte aux opportunités en Tunisie et à l'international.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PROJETS -->
+<section id="projets">
+  <div class="slabel">Portfolio</div>
+  <h2 class="stitle">Projets réalisés</h2>
+  <div class="pgrid">
+
+<div class="pcard">
+  <div class="pthumb video-hover">
+    <video muted playsinline preload="metadata">
+      <source src="./public/ged.mp4" type="video/mp4">
+    </video>
+
+    <div class="play-overlay"></div>
+    <div class="pbar"></div>
+  </div>
+
+  <div class="pbody">
+    <div class="pnum">01 — IA & Document</div>
+    <div class="ptitle">GED & Chatbot IA</div>
+    <p class="pdesc">
+      Système intelligent de gestion documentaire avec workflow BPM, chatbot IA et automatisation du cycle de vie des documents.
+    </p>
+            <div class="tags"><span class="tag r">Next.js<Next class="js"></Next></span><span class="tag">Spring Boot</span><span class="tag v">kafka</span>
+              <span class="tag">Camunda</span><span class="tag">Nextcloud</span><span class="tag">PostgreSQL</span></div>
+  </div>
+</div>
+
+    <div class="pcard">
+     <div class="pthumb video-hover">
+    <video muted playsinline preload="metadata">
+      <source src="./public/enchere.mp4" type="video/mp4">
+    </video>
+
+    <div class="play-overlay"></div>
+    <div class="pbar"></div>
+  </div>
+      <div class="pbody">
+        <div class="pnum">02 — Stage fin d'études · Elite Tech Gabès</div>
+        <div class="ptitle">Plateforme d'Enchères</div>
+        <p class="pdesc">Vente aux enchères en temps réel avec Angular & Spring Boot. Gestion des enchères, WebSocket, authentification sécurisée et gestion des commentaires.</p>
+        <div class="tags"><span class="tag r">Angular</span><span class="tag">Spring Boot</span><span class="tag v">Mysql</span><span class="tag">Java</span></div>
+      </div>
+    </div>
+
+    <div class="pcard">
+     <div class="pthumb video-hover">
+    <video muted playsinline preload="metadata">
+      <source src="./public/Video Project 5.mp4" type="video/mp4">
+    </video>
+
+    <div class="play-overlay"></div>
+    <div class="pbar"></div>
+  </div>
+      <div class="pbody">
+        <div class="pnum">03 — Stage perfectionnement · Business Software</div>
+        <div class="ptitle">Plateforme e-commerce</div>
+        <p class="pdesc">Application de commerce électronique complète développée en collaboration. Gestion produits, panier et paiement sécurisé.</p>
+        <div class="tags"><span class="tag v">React</span><span class="tag">Node.js</span><span class="tag">MySQL</span></div>
+      </div>
+    </div>
+    <div class="pcard">
+     <div class="pthumb video-hover">
+    <video muted playsinline preload="metadata">
+      <source src="./public/Video Project 4.mp4" type="video/mp4">
+    </video>
+
+    <div class="play-overlay"></div>
+    <div class="pbar"></div>
+  </div>
+      <div class="pbody">
+        <div class="ptitle">Plateforme de commerce digital</div>
+        <p class="pdesc">Plateforme e-commerce développée en .NET permettant la gestion des produits, commandes et utilisateurs avec une architecture sécurisée et performante.</p>
+        <div class="tags"><span class="tag r">.Net</span>
+          <span class="tag">Entity Framework</span>
+  <span class="tag">SQL Server</span></div>
+      </div>
+    </div>
+<div class="pcard">
+  <div class="pthumb video-hover">
+    <video muted playsinline preload="metadata">
+      <source src="./public/Video Project 6.mp4" type="video/mp4">
+    </video>
+    <div class="play-overlay"></div>
+    <div class="pbar"></div>
+  </div>
+  <div class="pbody">
+    <div class="ptitle">Calendrier & Planification universitaire</div>
+    <p class="pdesc">Système complet de gestion des emplois du temps universitaires. Planification automatique avec détection des conflits. Gestion des enseignants, salles, étudiants, départements, groupes et matières.</p>
+    <div class="tags">
+      <span class="tag v">Angular</span>
+      <span class="tag">Flutter</span>
+      <span class="tag">MySQL</span>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="slabel">Expertise</div>
+  <h2 class="stitle">Compétences techniques</h2>
+  <div class="skwrap">
+    <div>
+      <div class="sgroup">
+        <div class="scat">Backend</div>
+        <div class="chips">
+          <span class="chip">Java / Java EE</span><span class="chip">Spring Boot</span><span class="chip">NestJS</span>
+          <span class="chip">Node.js</span><span class="chip">Django</span><span class="chip">PHP</span>
+        </div>
+      </div>
+      <div class="sgroup">
+        <div class="scat">Frontend & Mobile</div>
+        <div class="chips">
+          <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Angular</span>
+          <span class="chip">Flutter</span><span class="chip">HTML/CSS</span><span class="chip">JavaScript</span><span class="chip">jQuery</span>
+        </div>
+      </div>
+      <div class="sgroup">
+        <div class="scat">Bases de données</div>
+        <div class="chips">
+          <span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span>
+        </div>
+      </div>
+      <div class="sgroup">
+        <div class="scat">DevOps & Cloud</div>
+        <div class="chips">
+          <span class="chip">Azure</span><span class="chip">Docker</span><span class="chip">Kafka</span>
+          <span class="chip">Camunda BPM</span><span class="chip">Nextcloud</span><span class="chip">Git</span>
+        </div>
+      </div>
+      <div class="sgroup">
+        <div class="scat">IA & Data</div>
+        <div class="chips">
+          <span class="chip">Chatbots</span><span class="chip">Big Data</span><span class="chip">Power BI</span><span class="chip">IA appliquée</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slabel" style="margin-bottom:14px;">Certifications</div>
+      <div class="clist">
+        <div class="citem"><div class="cicon">☁️</div><div class="ctext">Azure Fundamentals · Azure DevOps · Azure WebApps</div></div>
+        <div class="citem"><div class="cicon">📊</div><div class="ctext">Big Data</div></div>
+        <div class="citem"><div class="cicon">🤖</div><div class="ctext">Power BI & Artificial Intelligence</div></div>
+        <div class="citem"><div class="cicon">📈</div><div class="ctext">Automarketing</div></div>
+        <div class="citem"><div class="cicon">🎯</div><div class="ctext">La Planification Stratégique</div></div>
+      </div>
+
+      <div class="slabel" style="margin:26px 0 10px;">Langues</div>
+      <div class="lrow">
+        <div class="lpill"><span class="ldot" style="background:var(--p);"></span>Français</div>
+        <div class="lpill"><span class="ldot" style="background:var(--a);"></span>Anglais</div>
+        <div class="lpill"><span class="ldot" style="background:var(--a2);"></span>Arabe</div>
+      </div>
+
+      <div class="slabel" style="margin:24px 0 10px;">Qualités</div>
+      <div class="qgrid">
+        <div class="qitem">Créativité</div>
+        <div class="qitem">Adaptabilité</div>
+        <div class="qitem">Esprit d'équipe</div>
+        <div class="qitem">Bon relationnel</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PARCOURS -->
+<section id="parcours">
+  <div class="slabel">Parcours</div>
+  <h2 class="stitle">Expérience & Formation</h2>
+  <div class="egrid">
+    <div>
+      <div class="ctitle">Expérience professionnelle</div>
+      <div class="tl">
+        <div class="ti">
+          <div class="tdate">Stage Fin d'Études</div>
+          <div class="trole">Développeuse Full Stack</div>
+          <div class="tplace">Elite Tech — Gabès</div>
+          <div class="tdesc">Développement d'une plateforme de vente aux enchères innovante. Angular & Spring Boot, gestion des enchères, communication temps réel, authentification sécurisée, gestion des ventes et commentaires.</div>
+        </div>
+        <div class="ti">
+          <div class="tdate">Stage de Perfectionnement</div>
+          <div class="trole">Développeuse Web Full Stack</div>
+          <div class="tplace">Business Software</div>
+          <div class="tdesc">Développement d'une application e-commerce avec React et Node.js. Collaboration en équipe sur un projet complet de commerce électronique.</div>
+        </div>
+        <div class="ti">
+          <div class="tdate">Stage d'Observation</div>
+          <div class="trole">Stagiaire Informatique</div>
+          <div class="tplace">La Poste Tunisienne — Agareb</div>
+          <div class="tdesc">Observation et apprentissage des processus opérationnels et informatiques dans un environnement d'entreprise établi.</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="ctitle">Formation académique</div>
+      <div class="tl">
+        <div class="ti">
+          <div class="tdate">En cours · 2024 — 2026</div>
+          <div class="trole">Master 2 Génie Logiciel</div>
+          <div class="tplace">ISET Sfax</div>
+          <div class="tdesc">Spécialisation en architecture logicielle avancée, IA, systèmes distribués, génie du logiciel et développement cloud.</div>
+        </div>
+        <div class="ti">
+          <div class="tdate">2023 — 2024</div>
+          <div class="trole">Licence Développement des Systèmes d'Information</div>
+          <div class="tplace">Institut Supérieur des Études Technologiques de Sfax</div>
+          <div class="tdesc">Formation complète en développement web, mobile, bases de données, systèmes d'information et algorithmique.</div>
+        </div>
+        <div class="ti">
+          <div class="tdate">2019 — 2021</div>
+          <div class="trole">Baccalauréat</div>
+          <div class="tplace">Lycée Agareb — Sfax</div>
+          <div class="tdesc"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="slabel">Contact</div>
+  <h2 class="stitle">Travaillons ensemble</h2>
+  <div class="cwrap">
+    <div class="cinfo">
+      <h3>Un projet en tête ?</h3>
+      <p>Disponible pour des stages, missions freelance ou opportunités à temps plein. N'hésitez pas à me contacter pour échanger sur vos besoins technologiques.</p>
+      <div class="clinks">
+        <a href="mailto:benbelgassemzina@gmail.com" class="clink">
+          <div class="clico" style="background:rgba(110,231,255,.1);color:var(--p);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div><div class="cllbl">Email</div>benbelgassemzina@gmail.com</div>
+        </a>
+        <a href="tel:+21623878960" class="clink">
+          <div class="clico" style="background:rgba(184,169,255,.1);color:var(--a);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div><div class="cllbl">Téléphone</div>+216 23 878 960</div>
+        </a>
+        <a href="https://www.linkedin.com/in/zina-ben-belgacem-b1761227b/" target="_blank" class="clink">
+          <div class="clico" style="background:rgba(10,102,194,.15);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <div><div class="cllbl">LinkedIn</div>Zina Ben Belgacem</div>
+        </a>
+        <a href="https://github.com/zinabenbelgacem" target="_blank" class="clink">
+          <div class="clico" style="background:rgba(255,255,255,.05);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--m)"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </div>
+          <div><div class="cllbl">GitHub</div>zinabenbelgacem</div>
+        </a>
+        <a href="https://www.facebook.com/zina.benbelgassem" target="_blank" class="clink">
+          <div class="clico" style="background:rgba(24,119,242,.12);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </div>
+          <div><div class="cllbl">Facebook</div>Zina Ben Belgassem</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="finner">
+    <div class="ftop">
+      <div class="fb">
+        <div class="fbname">Zina<span>.</span>dev</div>
+        <p>Développeuse Full Stack · Master 2 Génie Logiciel<br>Spécialisée en IA, systèmes distribués et cloud Azure.<br>Basée à Sfax, Tunisie.</p>
+        <div class="srow">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/zina-ben-belgacem-b1761227b/" target="_blank" class="sbtn li" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/zina.benbelgassem" target="_blank" class="sbtn fb2" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/zinabenbelgacem" target="_blank" class="sbtn gh" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--m)"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#skills">Compétences</a></li>
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>Contact direct</h4>
+        <ul>
+          <li><a href="mailto:benbelgassemzina@gmail.com">benbelgassemzina@gmail.com</a></li>
+          <li><a href="tel:+21623878960">+216 23 878 960</a></li>
+          <li><a href="https://github.com/zinabenbelgacem" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/zina-ben-belgacem-b1761227b/" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.facebook.com/zina.benbelgassem" target="_blank">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <p>© 2026 Zina Ben Belgacem — Tous droits réservés</p>
+      <div class="made">Fait avec <span class="heart">♥</span> à Sfax, Tunisie</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const cg=document.getElementById('cg');
+document.addEventListener('mousemove',e=>{cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px';});
+
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:0.08});
+
+document.querySelectorAll('.pcard,.chip,.ti,.clink,.acard,.citem,.lpill,.qitem,.spill').forEach((el,i)=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(18px)';
+  el.style.transition=`opacity .6s ease ${i*.035}s,transform .6s ease ${i*.035}s`;
+  io.observe(el);
+});
+</script>
+<script>
+document.querySelectorAll(".video-hover").forEach(card => {
+  const video = card.querySelector("video");
+
+  card.addEventListener("mouseenter", () => {
+    video.currentTime = 0;
+    video.play();
+  });
+
+  card.addEventListener("mouseleave", () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+
+  card.addEventListener("click", () => {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    }
+    video.play();
+  });
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+</body>
+</html>
