@@ -961,8 +961,8 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
       </div>
       <div class="fg">
         <label class="flbl" for="contact-email">Votre e-mail</label>
-        <input class="finp" id="contact-email" type="email" name="reply_to"
-               placeholder="nom@exemple.com" autocomplete="email" required>
+     <input class="finp" id="contact-email" type="email" name="from_email"
+       placeholder="nom@exemple.com" autocomplete="email" required>
       </div>
       <div class="fg">
         <label class="flbl" for="contact-subject">Objet</label>
@@ -1053,9 +1053,9 @@ document.querySelectorAll('.pcard,.chip,.ti,.clink,.acard,.citem,.lpill,.qitem,.
 </script>
 <!-- EmailJS : remplace les 3 identifiants ci-dessous par ceux de ton compte EmailJS. -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-  // Configuration EmailJS (Dashboard > Account / Email Services / Email Templates).
-  // Remplace ces valeurs avant de publier le portfolio.
   const EMAILJS_PUBLIC_KEY = "HeaGxeP18uOPGtZIc";
   const EMAILJS_SERVICE_ID = "service_fdmt1wr";
   const EMAILJS_TEMPLATE_ID = "template_dkoep07";
@@ -1064,18 +1064,16 @@ document.querySelectorAll('.pcard,.chip,.ti,.clink,.acard,.citem,.lpill,.qitem,.
   const contactStatus = document.getElementById("form-status");
   const contactSubmit = document.getElementById("contact-submit");
 
+  // Initialiser EmailJS une seule fois.
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+
   if (contactForm) {
     contactForm.addEventListener("submit", async function (event) {
       event.preventDefault();
 
-      if (
-        !window.emailjs ||
-        EMAILJS_PUBLIC_KEY === "HeaGxeP18uOPGtZIc" ||
-        EMAILJS_SERVICE_ID === "service_fdmt1wr" ||
-        EMAILJS_TEMPLATE_ID === "template_dkoep07"
-      ) {
+      if (!navigator.onLine) {
         contactStatus.textContent =
-          "Le formulaire doit encore être configuré avec vos identifiants EmailJS.";
+          "Vérifiez votre connexion Internet, puis réessayez.";
         contactStatus.style.color = "var(--a2)";
         return;
       }
@@ -1086,19 +1084,20 @@ document.querySelectorAll('.pcard,.chip,.ti,.clink,.acard,.citem,.lpill,.qitem,.
       contactStatus.textContent = "";
 
       try {
-        emailjs.init(EMAILJS_PUBLIC_KEY);
         await emailjs.sendForm(
           EMAILJS_SERVICE_ID,
           EMAILJS_TEMPLATE_ID,
           contactForm
         );
-        contactStatus.textContent = "Votre message a été envoyé. Merci pour votre contact !";
+
+        contactStatus.textContent =
+          "Votre message a été envoyé. Merci pour votre contact !";
         contactStatus.style.color = "var(--p)";
         contactForm.reset();
       } catch (error) {
         console.error("EmailJS error:", error);
         contactStatus.textContent =
-          "L’envoi a échoué. Réessayez ou contactez-moi directement par e-mail.";
+          "L’envoi a échoué. Vérifiez la configuration EmailJS et réessayez.";
         contactStatus.style.color = "var(--a2)";
       } finally {
         contactSubmit.disabled = false;
@@ -1108,6 +1107,7 @@ document.querySelectorAll('.pcard,.chip,.ti,.clink,.acard,.citem,.lpill,.qitem,.
     });
   }
 </script>
+
 <script>
 document.querySelectorAll('.yt-lazy').forEach(function (btn) {
   btn.addEventListener('click', function () {
