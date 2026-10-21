@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+     <meta name="description" content="Portfolio de Zina Ben Belgacem, développeuse full-stack et mobile à Sfax : projets Spring Boot, Angular, React, Flutter et automatisation IA avec n8n.">
+   <meta property="og:title" content="Zina Ben Belgacem | Full Stack Developer">
+   <meta property="og:description" content="Projets en vidéo : GED et chatbot IA, enchères en temps réel, e-commerce, assistant WhatsApp.">
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Zina Ben Belgacem | Full Stack Developer</title>
@@ -8,6 +12,134 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+/* ===== VIDEO YOUTUBE : RESPONSIVE ===== */
+.pthumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+  border-radius: 12px;
+}
+
+.pthumb iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.pbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--p);
+  pointer-events: none;
+}
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.pcard {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--s1);
+  border: 1px solid var(--b2);
+  border-radius: 18px;
+}
+
+.pthumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background: #080d19;
+}
+
+.pthumb iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.pthumb .pbar {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  pointer-events: none;
+  background: linear-gradient(90deg, #38BDF8, #A78BFA);
+}
+
+.pbody {
+  position: relative;
+  z-index: 3;
+  min-width: 0;
+  padding: 22px;
+}
+
+.ptitle,
+.pdesc {
+  overflow-wrap: anywhere;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+@media (max-width: 960px) {
+  .pgrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pgrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .pbody {
+    padding: 18px;
+  }
+}
+
+.ptitle {
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.pdesc {
+  overflow-wrap: anywhere;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+
 :root{
   --bg:#04060F;--s1:#0A0D1A;--s2:#0F1222;
   --p:#6EE7FF;--a:#B8A9FF;--a2:#FF7F9A;
@@ -302,6 +434,43 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
   background: linear-gradient(90deg,#38BDF8,#A78BFA);
 }
 }
+/* Intégration des vidéos YouTube */
+.pthumb {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  background: #0D1A38;
+}
+
+.pthumb iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.pthumb .pbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #38BDF8, #A78BFA);
+}
+
+@media (max-width: 960px) {
+  .pthumb {
+    height: 220px;
+  }
+}
+.pthumb video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #080d19;
+}
 </style>
 </head>
 
@@ -331,10 +500,11 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
       <h1 class="fu d2">Full Stack<br>Developer</h1>
       <div class="hname fu d3">Zina Ben Belgacem</div>
       <p class="hsub fu d4">
-        Étudiante en 2ème année Master Génie Logiciel · Développeuse web & mobile passionnée par l'IA, les systèmes distribués et la création d'applications robustes avec Spring Boot, Angular, React et Flutter.
+        Développeuse Full Stack · Master Professionnel en Génie Logiciel (DSIR) · Passionnée par l'IA, les systèmes distribués et la création d'applications robustes avec Spring Boot, Angular, React et Flutter.
       </p>
       <div class="hact fu d5">
-        <a href="./public/mon cv .pdf" class="btn1" download>
+        <!-- Le PDF doit exister exactement sous ce nom dans le dossier public/. -->
+        <a href="./public/CV_Zina_Ben_Belgacem_FullStack_AI_FR (1).pdf" class="btn1" download>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
             <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -349,17 +519,30 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
         <div class="aring"></div>
         <div class="amask"></div>
         <div class="aphoto">
-          <!-- Photo du CV de Zina -->
+          <!-- Le fichier photo doit exister exactement à ce chemin dans le dossier public/. -->
           <img src="./public/449610093_7724964190956215_4291587629864170296_n.jpg"
                alt="Zina Ben Belgacem"
                id="avatarImg"/>
         </div>
       </div>
-      <div class="hstats">
-        <div class="spill"><div class="snum">M2</div><div class="slbl">Master GL</div></div>
-        <div class="spill"><div class="snum">3+</div><div class="slbl">Expériences</div></div>
-        <div class="spill"><div class="snum">5+</div><div class="slbl">Certifications</div></div>
-      </div>
+      
+<div class="hstats">
+  <div class="spill">
+    <div class="snum">Master</div>
+    <div class="slbl">Génie logiciel</div>
+  </div>
+
+  <div class="spill">
+    <div class="snum">Full Stack</div>
+    <div class="slbl">Développement</div>
+  </div>
+
+  <div class="spill">
+    <div class="snum">IA</div>
+    <div class="slbl">Automatisation</div>
+  </div>
+</div>
+
     </div>
   </div>
 </header>
@@ -370,7 +553,7 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
     <div class="acard">
       <div class="aicon" style="background:rgba(110,231,255,.08);">🎓</div>
       <h3>Formation</h3>
-      <p>Master Génie Logiciel · ISET Sfax<br>Licence Développement des Systèmes d'Information — 2023/2024</p>
+      <p>Master Professionnel DSIR / Génie Logiciel · ISET Sfax<br>Licence Développement des Systèmes d'Information — 2023/2024</p>
     </div>
    <div class="acard">
   <div class="aicon" style="background:rgba(184,169,255,.08);">💻</div>
@@ -397,14 +580,13 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
   <div class="pgrid">
 
 <div class="pcard">
-  <div class="pthumb video-hover">
-    <video muted playsinline preload="metadata">
-<source src="https://drive.google.com/uc?export=download&id=1bqXuHuBZpagvN5RyMEbbsSqupechW-lp" type="video/mp4">
-    </video>
-
-    <div class="play-overlay"></div>
-    <div class="pbar"></div>
-  </div>
+<div class="pthumb ">
+<video controls playsinline preload="metadata">
+    <source src="./public/Ged.mp4" type="video/mp4">
+    Votre navigateur ne prend pas en charge la lecture vidéo.
+</video>
+  <div class="pbar"></div>
+</div>
 
   <div class="pbody">
     <div class="pnum">01 — IA & Document</div>
@@ -412,36 +594,39 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
     <p class="pdesc">
       Système intelligent de gestion documentaire avec workflow BPM, chatbot IA et automatisation du cycle de vie des documents.
     </p>
-            <div class="tags"><span class="tag r">Next.js<Next class="js"></Next></span><span class="tag">Spring Boot</span><span class="tag v">kafka</span>
+            <div class="tags">
+<span class="tag r">Next.js</span>              <span class="tag">Spring Boot</span><span class="tag v">kafka</span>
               <span class="tag">Camunda</span><span class="tag">Nextcloud</span><span class="tag">PostgreSQL</span></div>
   </div>
 </div>
 
     <div class="pcard">
-     <div class="pthumb video-hover">
-    <video muted playsinline preload="metadata">
-<source src="https://drive.google.com/uc?export=download&id=1VTNSUULhOlDl8hZmxPr21HLegJ4z_88-" type="video/mp4">    </video>
+<div class="pthumb" data-yt>
+<video controls playsinline preload="metadata">
+    <source src="./public/Enchere.mp4" type="video/mp4">
+    Votre navigateur ne prend pas en charge la lecture vidéo.
+</video>
+  <div class="pbar"></div>
+</div>
 
-    <div class="play-overlay"></div>
-    <div class="pbar"></div>
-  </div>
       <div class="pbody">
         <div class="pnum">02 — Stage fin d'études · Elite Tech Gabès</div>
-        <div class="ptitle">Plateforme d'Enchères</div>
-        <p class="pdesc">Vente aux enchères en temps réel avec Angular & Spring Boot. Gestion des enchères, WebSocket, authentification sécurisée et gestion des commentaires.</p>
+        <div class="ptitle">Plateforme d’Enchères en Temps Réel</div>
+        <p class="pdesc">Développement d’une plateforme d’enchères en temps réel avec Angular et Spring Boot. Gestion des enchères, communication instantanée via WebSocket, authentification sécurisée et système de commentaires.</p>
         <div class="tags"><span class="tag r">Angular</span><span class="tag">Spring Boot</span><span class="tag v">Mysql</span><span class="tag">Java</span></div>
       </div>
     </div>
 
     <div class="pcard">
-     <div class="pthumb video-hover">
-    <video muted playsinline preload="metadata">
-<source src="https://drive.google.com/uc?export=download&id=1nu4_j2XKwFi17_LMorhkl9_CN6noQM3o" type="video/mp4">
-    </video>
+<div class="pthumb" data-yt>
+<video controls playsinline preload="metadata"
+       aria-label="Démonstration de la plateforme e-commerce">
+    <source src="./public/Video%20Project%205.mp4" type="video/mp4">
+    Votre navigateur ne prend pas en charge la lecture vidéo.
+</video>
 
-    <div class="play-overlay"></div>
-    <div class="pbar"></div>
-  </div>
+  <div class="pbar"></div>
+</div>
       <div class="pbody">
         <div class="pnum">03 — Stage perfectionnement · Business Software</div>
         <div class="ptitle">Plateforme e-commerce</div>
@@ -449,32 +634,48 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
         <div class="tags"><span class="tag v">React</span><span class="tag">Node.js</span><span class="tag">MySQL</span></div>
       </div>
     </div>
-    <div class="pcard">
-     <div class="pthumb video-hover">
-    <video muted playsinline preload="metadata">
-<source src="https://drive.google.com/uc?export=download&id=1vZ4Z-H7FhLfhgls4a58rIWuV7Rq1FWiy" type="video/mp4">    </video>
-
-    <div class="play-overlay"></div>
-    <div class="pbar"></div>
-  </div>
-      <div class="pbody">
-        <div class="ptitle">Plateforme de commerce digital</div>
-        <p class="pdesc">Plateforme e-commerce développée en .NET permettant la gestion des produits, commandes et utilisateurs avec une architecture sécurisée et performante.</p>
-        <div class="tags"><span class="tag r">.Net</span>
-          <span class="tag">Entity Framework</span>
-  <span class="tag">SQL Server</span></div>
-      </div>
-    </div>
 <div class="pcard">
-  <div class="pthumb video-hover">
-    <video muted playsinline preload="metadata">
-<source src="https://drive.google.com/uc?export=download&id=10QBT4oJmSL5z5Jo0wshnCUuNicr9wjk_" type="video/mp4">    </video>
-    <div class="play-overlay"></div>
+ <div class="pthumb" data-yt>
+<video controls playsinline preload="metadata"
+       aria-label="Démonstration du projet de commerce digital .NET">
+    <source src="./public/Video%20Project%204.mp4" type="video/mp4">
+    Votre navigateur ne prend pas en charge la lecture vidéo.
+</video>
+ 
     <div class="pbar"></div>
   </div>
   <div class="pbody">
-    <div class="ptitle">Calendrier & Planification universitaire</div>
-    <p class="pdesc">Système complet de gestion des emplois du temps universitaires. Planification automatique avec détection des conflits. Gestion des enseignants, salles, étudiants, départements, groupes et matières.</p>
+    <div class="pnum">04 — Commerce digital</div>
+    <div class="ptitle">Plateforme de commerce digital</div>
+    <p class="pdesc">
+      Plateforme e-commerce développée en .NET permettant la gestion des produits,
+      commandes et utilisateurs avec une architecture sécurisée et performante.
+    </p>
+    <div class="tags">
+      <span class="tag r">.NET</span>
+      <span class="tag">Entity Framework</span>
+      <span class="tag">SQL Server</span>
+    </div>
+  </div>
+</div>
+
+<div class="pcard">
+  <div class="pthumb video-hover">
+ <video controls playsinline preload="metadata"
+       aria-label="Démonstration de la planification universitaire">
+    <source src="./public/Video%20Project%206.mp4" type="video/mp4">
+    Votre navigateur ne prend pas en charge la lecture vidéo.
+</video>
+    <div class="pbar"></div>
+  </div>
+  <div class="pbody">
+    <div class="pnum">05 — Planification universitaire</div>
+    <div class="ptitle">Calendrier &amp; Planification universitaire</div>
+    <p class="pdesc">
+      Système complet de gestion des emplois du temps universitaires.
+      Planification automatique avec détection des conflits et gestion des
+      enseignants, salles, étudiants, départements, groupes et matières.
+    </p>
     <div class="tags">
       <span class="tag v">Angular</span>
       <span class="tag">Flutter</span>
@@ -482,6 +683,44 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
     </div>
   </div>
 </div>
+
+    <!-- Projet IA Automation : assistant WhatsApp orchestré avec n8n -->
+    <div class="pcard">
+        <div class="pthumb video-hover">
+       <video controls playsinline preload="metadata"
+       aria-label="Démonstration d'assistant_whatsapp">
+    <source   src="./public/demo_assistant_whatsapp_portfolio.mp4"
+ type="video/mp4">
+    Votre navigateur ne prend pas en charge la lecture vidéo.
+</video>
+        <div class="pbar"></div>
+      </div>
+      <div class="pbody">
+<div class="pnum">06 — IA & Automatisation</div>
+<div class="ptitle">Assistant IA conversationnel sur WhatsApp</div>
+
+<p class="pdesc">
+  Développement d’un assistant conversationnel intelligent connecté à WhatsApp
+  via la WhatsApp Cloud API. Automatisation des réponses aux demandes courantes,
+  gestion du contexte des conversations et transfert des demandes nécessitant
+  une intervention humaine par notification e-mail. Mise en place d’un mécanisme
+  de fallback entre plusieurs modèles de langage (LLM) pour améliorer la
+  continuité du service.
+</p>
+
+<div class="tags">
+  <span class="tag r">n8n</span>
+  <span class="tag">WhatsApp Cloud API</span>
+  <span class="tag v">Webhooks</span>
+  <span class="tag">LLM Integration</span>
+  <span class="tag">Groq</span>
+  <span class="tag">Google Gemini</span>
+  <span class="tag">Ollama</span>
+  <span class="tag v">AI Automation</span>
+  <span class="tag">Prompt Engineering</span>
+</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -521,21 +760,74 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
         </div>
       </div>
       <div class="sgroup">
+        <div class="scat">Automatisation & IA</div>
+        <div class="chips">
+          <span class="chip">n8n</span><span class="chip">Workflows automatisés</span>
+          <span class="chip">WhatsApp Cloud API</span><span class="chip">Webhooks</span>
+          <span class="chip">Chatbots IA</span><span class="chip">Groq</span>
+          <span class="chip">Gemini</span><span class="chip">Ollama</span>
+          <span class="chip">Intégration de LLM</span>
+        </div>
+      </div>
+      <div class="sgroup">
         <div class="scat">IA & Data</div>
         <div class="chips">
-          <span class="chip">Chatbots</span><span class="chip">Big Data</span><span class="chip">Power BI</span><span class="chip">IA appliquée</span>
+          <span class="chip">Big Data</span><span class="chip">Power BI</span><span class="chip">IA appliquée</span>
         </div>
       </div>
     </div>
     <div>
       <div class="slabel" style="margin-bottom:14px;">Certifications</div>
-      <div class="clist">
-        <div class="citem"><div class="cicon">☁️</div><div class="ctext">Azure Fundamentals · Azure DevOps · Azure WebApps</div></div>
-        <div class="citem"><div class="cicon">📊</div><div class="ctext">Big Data</div></div>
-        <div class="citem"><div class="cicon">🤖</div><div class="ctext">Power BI & Artificial Intelligence</div></div>
-        <div class="citem"><div class="cicon">📈</div><div class="ctext">Automarketing</div></div>
-        <div class="citem"><div class="cicon">🎯</div><div class="ctext">La Planification Stratégique</div></div>
-      </div>
+      
+<div class="clist">
+  <div class="citem">
+    <div class="cicon">🌍</div>
+    <div class="ctext">
+      Digital Competence — Projet HINTS, cofinancé par l’Union européenne · 22 septembre 2025
+    </div>
+  </div>
+
+  <div class="citem">
+    <div class="cicon">🌐</div>
+    <div class="ctext">CCNA — Réseaux</div>
+  </div>
+
+  <div class="citem">
+    <div class="cicon">🎮</div>
+    <div class="ctext">Gamification</div>
+  </div>
+
+  <div class="citem">
+    <div class="cicon">🎓</div>
+    <div class="ctext">Educational Innovation — Innovation pédagogique</div>
+  </div>
+
+  <div class="citem">
+    <div class="cicon">🌱</div>
+    <div class="ctext">Green Industries — Industries vertes</div>
+  </div>
+
+  <div class="citem">
+    <div class="cicon">☁️</div>
+    <div class="ctext">Azure Fundamentals · Azure DevOps · Azure Web Apps</div>
+  </div>
+
+  <div class="citem">
+    <div class="cicon">📊</div>
+    <div class="ctext">Big Data</div>
+  </div>
+
+  <div class="citem">
+    <div class="cicon">🤖</div>
+    <div class="ctext">Power BI et Intelligence Artificielle</div>
+  </div>
+
+  <div class="citem">
+    <div class="cicon">📈</div>
+    <div class="ctext">Automarketing et planification stratégique</div>
+  </div>
+</div>
+
 
       <div class="slabel" style="margin:26px 0 10px;">Langues</div>
       <div class="lrow">
@@ -566,6 +858,12 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
       <div class="ctitle">Expérience professionnelle</div>
       <div class="tl">
         <div class="ti">
+          <div class="tdate">Stage de Projet de Fin d’Études (PFE) · 2026</div>
+          <div class="trole">Développeuse Full Stack & Chatbot IA</div>
+          <div class="tplace">QUALIFORT Solutions — Sfax</div>
+          <div class="tdesc">Conception et développement d’une plateforme intelligente de suivi opérationnel et de communication automatisée via chatbot. Participation au développement des fonctionnalités web, à la gestion des dossiers et à l’intégration de services de messagerie et de notifications dans une architecture orientée microservices. Environnement technique : Spring Boot, Next.js, PostgreSQL et chatbot IA.</div>
+        </div>
+        <div class="ti">
           <div class="tdate">Stage Fin d'Études</div>
           <div class="trole">Développeuse Full Stack</div>
           <div class="tplace">Elite Tech — Gabès</div>
@@ -589,8 +887,8 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
       <div class="ctitle">Formation académique</div>
       <div class="tl">
         <div class="ti">
-          <div class="tdate">En cours · 2024 — 2026</div>
-          <div class="trole">Master 2 Génie Logiciel</div>
+          <div class="tdate">2025 — 2026</div>
+          <div class="trole">Master Professionnel DSIR — Génie Logiciel</div>
           <div class="tplace">ISET Sfax</div>
           <div class="tdesc">Spécialisation en architecture logicielle avancée, IA, systèmes distribués, génie du logiciel et développement cloud.</div>
         </div>
@@ -655,6 +953,31 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
       </div>
     </div>
 
+    <form id="contact-form" class="cform">
+      <div class="fg">
+        <label class="flbl" for="contact-name">Votre nom</label>
+        <input class="finp" id="contact-name" type="text" name="from_name"
+               placeholder="Nom et prénom" autocomplete="name" required>
+      </div>
+      <div class="fg">
+        <label class="flbl" for="contact-email">Votre e-mail</label>
+        <input class="finp" id="contact-email" type="email" name="reply_to"
+               placeholder="nom@exemple.com" autocomplete="email" required>
+      </div>
+      <div class="fg">
+        <label class="flbl" for="contact-subject">Objet</label>
+        <input class="finp" id="contact-subject" type="text" name="subject"
+               placeholder="Objet de votre message" required>
+      </div>
+      <div class="fg">
+        <label class="flbl" for="contact-message">Message</label>
+        <textarea class="finp" id="contact-message" name="message"
+                  placeholder="Décrivez votre projet ou votre demande..." rows="5" required></textarea>
+      </div>
+      <button type="submit" class="bsub" id="contact-submit">Envoyer le message →</button>
+      <p id="form-status" role="status" aria-live="polite"></p>
+    </form>
+
   </div>
 </section>
 
@@ -664,7 +987,7 @@ footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36p
     <div class="ftop">
       <div class="fb">
         <div class="fbname">Zina<span>.</span>dev</div>
-        <p>Développeuse Full Stack · Master 2 Génie Logiciel<br>Spécialisée en IA, systèmes distribués et cloud Azure.<br>Basée à Sfax, Tunisie.</p>
+        <p>Développeuse Full Stack · Master Professionnel DSIR — Génie Logiciel<br>Spécialisée en développement Full Stack, chatbots IA et automatisation avec n8n.<br>Basée à Sfax, Tunisie.</p>
         <div class="srow">
           <!-- LinkedIn -->
           <a href="https://www.linkedin.com/in/zina-ben-belgacem-b1761227b/" target="_blank" class="sbtn li" aria-label="LinkedIn">
@@ -728,30 +1051,91 @@ document.querySelectorAll('.pcard,.chip,.ti,.clink,.acard,.citem,.lpill,.qitem,.
   io.observe(el);
 });
 </script>
+<!-- EmailJS : remplace les 3 identifiants ci-dessous par ceux de ton compte EmailJS. -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-document.querySelectorAll(".video-hover").forEach(card => {
-  const video = card.querySelector("video");
+  // Configuration EmailJS (Dashboard > Account / Email Services / Email Templates).
+  // Remplace ces valeurs avant de publier le portfolio.
+  const EMAILJS_PUBLIC_KEY = "HeaGxeP18uOPGtZIc";
+  const EMAILJS_SERVICE_ID = "service_fdmt1wr";
+  const EMAILJS_TEMPLATE_ID = "template_dkoep07";
 
-  card.addEventListener("mouseenter", () => {
-    video.currentTime = 0;
-    video.play();
-  });
+  const contactForm = document.getElementById("contact-form");
+  const contactStatus = document.getElementById("form-status");
+  const contactSubmit = document.getElementById("contact-submit");
 
-  card.addEventListener("mouseleave", () => {
-    video.pause();
-    video.currentTime = 0;
-  });
+  if (contactForm) {
+    contactForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-  card.addEventListener("click", () => {
-    if (video.requestFullscreen) {
-      video.requestFullscreen();
+      if (
+        !window.emailjs ||
+        EMAILJS_PUBLIC_KEY === "HeaGxeP18uOPGtZIc" ||
+        EMAILJS_SERVICE_ID === "service_fdmt1wr" ||
+        EMAILJS_TEMPLATE_ID === "template_dkoep07"
+      ) {
+        contactStatus.textContent =
+          "Le formulaire doit encore être configuré avec vos identifiants EmailJS.";
+        contactStatus.style.color = "var(--a2)";
+        return;
+      }
+
+      contactSubmit.disabled = true;
+      contactSubmit.classList.add("loading");
+      contactSubmit.textContent = "Envoi en cours…";
+      contactStatus.textContent = "";
+
+      try {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+        await emailjs.sendForm(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          contactForm
+        );
+        contactStatus.textContent = "Votre message a été envoyé. Merci pour votre contact !";
+        contactStatus.style.color = "var(--p)";
+        contactForm.reset();
+      } catch (error) {
+        console.error("EmailJS error:", error);
+        contactStatus.textContent =
+          "L’envoi a échoué. Réessayez ou contactez-moi directement par e-mail.";
+        contactStatus.style.color = "var(--a2)";
+      } finally {
+        contactSubmit.disabled = false;
+        contactSubmit.classList.remove("loading");
+        contactSubmit.textContent = "Envoyer le message →";
+      }
+    });
+  }
+</script>
+<script>
+document.querySelectorAll('.yt-lazy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var id = btn.dataset.id;
+    if (location.protocol === 'file:') {
+      window.open('https://www.youtube.com/watch?v=' + id, '_blank', 'noopener');
+      return;
     }
-    video.play();
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+    f.title = btn.dataset.title;
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.allowFullscreen = true;
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    btn.replaceWith(f);
   });
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+document.querySelectorAll('.pthumb video').forEach(video => {
+    video.addEventListener('mouseenter', () => {
+        video.play().catch(() => {});
+    });
 
-
+    video.addEventListener('mouseleave', () => {
+        video.pause();
+    });
+});
+</script>
 </body>
 </html>
