@@ -1,1141 +1,1558 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-     <meta name="description" content="Portfolio de Zina Ben Belgacem, développeuse full-stack et mobile à Sfax : projets Spring Boot, Angular, React, Flutter et automatisation IA avec n8n.">
-   <meta property="og:title" content="Zina Ben Belgacem | Full Stack Developer">
-   <meta property="og:description" content="Projets en vidéo : GED et chatbot IA, enchères en temps réel, e-commerce, assistant WhatsApp.">
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Zina Ben Belgacem | Full Stack Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zina Ben Belgacem | Développeuse Full Stack à Sfax</title>
+<meta name="description" content="Portfolio de Zina Ben Belgacem, développeuse full-stack et mobile à Sfax : Spring Boot, Angular, React, Flutter, IA et automatisation n8n.">
+<link rel="canonical" href="https://zina-ben-belgacem.netlify.app/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👩‍💻</text></svg>">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zina-ben-belgacem.netlify.app/">
+<meta property="og:title" content="Zina Ben Belgacem | Full Stack Developer">
+<meta property="og:description" content="Projets en vidéo : GED et chatbot IA, enchères en temps réel, e-commerce, assistant WhatsApp.">
+<meta property="og:image" content="https://zina-ben-belgacem.netlify.app/public/zina.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* ===== VIDEO YOUTUBE : RESPONSIVE ===== */
-.pthumb {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: #111;
-  border-radius: 12px;
-}
-
-.pthumb iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-
-.pbar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--p);
-  pointer-events: none;
-}
-.pgrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  align-items: start;
-}
-
-.pcard {
-  position: relative;
-  min-width: 0;
-  overflow: hidden;
-  background: var(--s1);
-  border: 1px solid var(--b2);
-  border-radius: 18px;
-}
-
-.pthumb {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  background: #080d19;
-}
-
-.pthumb iframe {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.pthumb .pbar {
-  position: absolute;
-  z-index: 2;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  pointer-events: none;
-  background: linear-gradient(90deg, #38BDF8, #A78BFA);
-}
-
-.pbody {
-  position: relative;
-  z-index: 3;
-  min-width: 0;
-  padding: 22px;
-}
-
-.ptitle,
-.pdesc {
-  overflow-wrap: anywhere;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-
-@media (max-width: 960px) {
-  .pgrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-  }
-}
-
-@media (max-width: 600px) {
-  .pgrid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 22px;
-  }
-
-  .pbody {
-    padding: 18px;
-  }
-}
-
-.ptitle {
-  line-height: 1.4;
-  overflow-wrap: anywhere;
-}
-
-.pdesc {
-  overflow-wrap: anywhere;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-
-
-:root{
-  --bg:#04060F;--s1:#0A0D1A;--s2:#0F1222;
-  --p:#6EE7FF;--a:#B8A9FF;--a2:#FF7F9A;
-  --t:#E8ECF4;--m:#7A8BA8;
-  --b:rgba(110,231,255,0.12);--b2:rgba(255,255,255,0.07);
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--t);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden;}
-
-/* CURSOR */
-#cg{position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(110,231,255,0.04) 0%,transparent 70%);pointer-events:none;transform:translate(-50%,-50%);transition:left .5s ease,top .5s ease;z-index:0;}
+:root{--navy:#080d25;--navy2:#101735;--purple:#7657ff;--pink:#ff8bd5;--ink:#171a3b;--muted:#687092;--paper:#f6f6ff;--line:rgba(122,111,220,.19);--shadow:0 14px 35px rgba(39,32,110,.09)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3{font-family:Syne,sans-serif;line-height:1.15}
+:focus-visible{outline:2px solid var(--purple);outline-offset:3px;border-radius:6px}
+section[id]{scroll-margin-top:84px}
+.hand{font-family:Caveat,cursive}
 
 /* NAV */
-nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,6,15,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--b2);}
-.logo{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--t);text-decoration:none;}
-.logo span{color:var(--p);}
-nav ul{display:flex;gap:32px;list-style:none;align-items:center;}
-nav a{color:var(--m);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .3s;}
-nav a:hover{color:var(--p);}
-.ncta{padding:7px 18px;border:1px solid var(--b);border-radius:8px;color:var(--p)!important;}
-.ncta:hover{background:rgba(110,231,255,0.08)!important;}
+.site-header{position:sticky;top:0;z-index:20;color:#fff;background:rgba(8,13,37,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{max-width:1440px;margin:auto;padding:14px 4%;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;white-space:nowrap}
+.brand-mark{width:34px;height:30px;display:grid;place-items:center;border:1px solid #9886ff;border-radius:10px;color:#b9adff;font-family:monospace;font-size:15px}
+.nav-links{display:flex;align-items:center;gap:clamp(12px,2.2vw,30px);font-size:12px;font-weight:600}
+.nav-links a{opacity:.84;transition:.2s}
+.nav-links a:hover{opacity:1;color:#c7bcff}
 
 /* HERO */
-header{min-height:100vh;padding:130px 60px 90px;display:flex;align-items:center;position:relative;overflow:hidden;}
-.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(110,231,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(110,231,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
-.hg1{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(110,231,255,0.07) 0%,transparent 65%);top:-150px;right:-100px;pointer-events:none;}
-.hg2{position:absolute;width:450px;height:450px;background:radial-gradient(circle,rgba(184,169,255,0.06) 0%,transparent 65%);bottom:0;left:80px;pointer-events:none;}
-.hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr auto;gap:80px;align-items:center;}
+.hero{position:relative;overflow:hidden;color:#fff;background:#0a0e2c}
+.hand-note{position:absolute;right:6%;top:38px;z-index:1;color:#e0d6ff;font-size:30px;transform:rotate(-8deg);line-height:1.05;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.hand-note span{color:var(--pink)}
+.hero-inner{position:relative;z-index:1;max-width:1440px;margin:auto;padding:96px 4% 100px;min-height:520px;display:grid;grid-template-columns:minmax(0,1fr);align-items:center}
+.hero-copy{max-width:min(620px,56%)}
+.eyebrow{color:#c2b7ff;font-size:12px;text-transform:uppercase;letter-spacing:.18em;font-weight:700}
+.hi{font-size:clamp(20px,2.6vw,28px);font-weight:500;margin:16px 0 2px;color:#e3ddff}
+h1{font-size:clamp(36px,5.4vw,64px);margin:0 0 6px;letter-spacing:-.04em}
+.role{font:700 clamp(18px,2.2vw,24px) Syne,sans-serif;color:#b6a8ff;margin-bottom:16px}
+.hero-copy p.lead{color:#d5d9f2;max-width:500px;font-size:15px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 20px;border-radius:999px;font-size:13px;font-weight:700;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{color:#fff;background:linear-gradient(135deg,#8768ff,#6545e9);box-shadow:0 8px 22px rgba(104,72,240,.3)}
+.btn-outline{color:#fff;border-color:rgba(255,255,255,.42);background:rgba(255,255,255,.05)}
+.socials{display:flex;gap:10px}
+.socials a{width:36px;height:36px;border:1px solid rgba(255,255,255,.25);border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;transition:.2s}
+.socials a:hover{background:var(--purple);border-color:var(--purple)}
+.hero-art{position:absolute;top:0;right:0;bottom:0;width:68%;z-index:0}
+.hero-art img{width:100%;height:100%;object-fit:cover;object-position:62% center;display:block;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 38%),linear-gradient(0deg,transparent 0%,#000 14%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,#000 38%),linear-gradient(0deg,transparent 0%,#000 14%);mask-composite:intersect}
 
-.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border:1px solid rgba(110,231,255,.2);border-radius:100px;font-size:.75rem;color:var(--p);letter-spacing:.04em;margin-bottom:28px;background:rgba(110,231,255,.05);}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--p);animation:blink 2s infinite;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+/* LAYOUT */
+.layout{max-width:1440px;margin:auto;padding:24px 2.5%}
+.card{background:#fff;border:1px solid rgba(118,87,255,.1);border-radius:18px;box-shadow:var(--shadow)}
+.about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:24px}
+.about-card{display:grid;grid-template-columns:140px 1fr;gap:22px;padding:25px}
+.avatar{width:132px;aspect-ratio:1;border-radius:22px;overflow:hidden;border:1px solid #ddd5ff;box-shadow:0 10px 25px rgba(90,66,220,.2);background:#e9e5ff}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+.scribble{color:#7357ff;font-size:19px;margin-top:10px;transform:rotate(-4deg);line-height:1.1}
+.section-title{font-size:25px;margin-bottom:12px}
+.about-copy p{color:#535b7d;font-size:14px;margin-bottom:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:6px 11px;border-radius:999px;background:#f0edff;color:#5141b5;font-size:11px;font-weight:700}
+.values-card{padding:25px}
+.values-card h3{font-size:16px;margin-bottom:14px}
+.value{display:flex;align-items:center;gap:11px;color:#596083;font-size:14px;margin-bottom:11px}
+.value-icon{width:30px;height:30px;border-radius:10px;background:#f0edff;color:#7055f5;display:grid;place-items:center}
+.lang-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.lang-row .chip{background:var(--navy);color:#e3ddff}
+.sub-h{font:700 12px "DM Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:18px 0 9px}
 
-h1{font-family:'Syne',sans-serif;font-size:4rem;font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:10px;}
-.hname{font-family:'Syne',sans-serif;font-size:1.55rem;font-weight:600;background:linear-gradient(135deg,var(--p),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;}
-.hsub{color:var(--m);font-size:.94rem;font-weight:300;max-width:490px;margin-bottom:36px;line-height:1.9;}
-.hact{display:flex;gap:14px;flex-wrap:wrap;}
-
-.btn1{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:var(--p);color:#04060F;font-weight:700;font-size:.87rem;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif;}
-.btn1:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(110,231,255,.25);}
-.btn2{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:transparent;color:var(--t);font-weight:500;font-size:.87rem;border-radius:10px;text-decoration:none;border:1px solid var(--b2);transition:all .3s;}
-.btn2:hover{border-color:var(--b);background:rgba(255,255,255,.03);}
-
-/* AVATAR */
-.hvisual{display:flex;flex-direction:column;align-items:center;gap:22px;}
-.awrap{position:relative;width:210px;height:210px;}
-.aring{position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(from 0deg,var(--p),var(--a),var(--a2),var(--p));animation:spin 7s linear infinite;}
-@keyframes spin{to{transform:rotate(360deg);}}
-.amask{position:absolute;inset:2px;border-radius:50%;background:var(--bg);}
-.aphoto{position:absolute;inset:6px;border-radius:50%;overflow:hidden;background:var(--s2);display:flex;align-items:center;justify-content:center;}
-.aphoto img{width:100%;height:100%;object-fit:cover;object-position:top center;}
-.ainit{font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,var(--p),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hstats{display:flex;gap:12px;}
-.spill{padding:10px 14px;background:var(--s2);border:1px solid var(--b2);border-radius:12px;text-align:center;min-width:72px;}
-.snum{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--p);line-height:1;margin-bottom:4px;}
-.slbl{font-size:.62rem;color:var(--m);text-transform:uppercase;letter-spacing:.07em;}
-
-/* SHARED */
-.divider{max-width:1200px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--b2) 30%,var(--b2) 70%,transparent);}
-section{padding:90px 60px;max-width:1200px;margin:0 auto;}
-.slabel{font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;color:var(--p);font-weight:500;margin-bottom:10px;}
-.stitle{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:46px;line-height:1.15;}
-
-/* ABOUT STRIP */
-.astrip{background:var(--s1);border-top:1px solid var(--b2);border-bottom:1px solid var(--b2);padding:48px 60px;}
-.ainner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.acard{padding:24px;border:1px solid var(--b2);border-radius:16px;background:var(--s2);transition:border-color .3s;}
-.acard:hover{border-color:var(--b);}
-.aicon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:12px;}
-.acard h3{font-family:'Syne',sans-serif;font-size:.93rem;font-weight:700;margin-bottom:7px;}
-.acard p{color:var(--m);font-size:.83rem;line-height:1.75;}
-#form-status {
-  font-size: .8rem;
-  margin-top: 10px;
-  color: var(--m);
-}
-
-.bsub.loading {
-  opacity: 0.7;
-  pointer-events: none;
-}
-
-.bsub.loading::after {
-  content: "";
-  width: 14px;
-  height: 14px;
-  margin-left: 10px;
-  border: 2px solid #000;
-  border-top: 2px solid transparent;
-  border-radius: 50%;
-  display: inline-block;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.finp:invalid {
-  border-color: rgba(255,127,154,.5);
-}
-
-.finp:focus {
-  transform: translateY(-2px);
-  transition: 0.2s;
-}
-/* PROJECTS */
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.pcard{background:var(--s1);border:1px solid var(--b2);border-radius:18px;overflow:hidden;transition:all .4s cubic-bezier(.23,1,.32,1);position:relative;}
-.pcard::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(110,231,255,.04),rgba(184,169,255,.03));opacity:0;transition:opacity .4s;border-radius:18px;pointer-events:none;}
-.pcard:hover{transform:translateY(-7px);border-color:rgba(110,231,255,.22);box-shadow:0 24px 50px rgba(0,0,0,.4);}
-.pcard:hover::after{opacity:1;}
-.pthumb{height:155px;position:relative;display:flex;align-items:center;justify-content:center;}
-.pemoji{font-size:2.6rem;opacity:.17;}
-.pbar{position:absolute;bottom:0;left:0;right:0;height:2px;}
-.pbody{padding:20px;position:relative;z-index:1;}
-.pnum{font-size:.67rem;color:var(--m);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;}
-.ptitle{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:9px;}
-.pdesc{color:var(--m);font-size:.83rem;line-height:1.72;margin-bottom:14px;}
-.tags{display:flex;flex-wrap:wrap;gap:5px;}
-.tag{padding:3px 9px;border-radius:6px;font-size:.68rem;font-weight:500;background:rgba(110,231,255,.08);color:var(--p);border:1px solid rgba(110,231,255,.12);}
-.tag.v{background:rgba(184,169,255,.08);color:var(--a);border-color:rgba(184,169,255,.12);}
-.tag.r{background:rgba(255,127,154,.08);color:var(--a2);border-color:rgba(255,127,154,.12);}
-
-/* SKILLS */
-.skwrap{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:start;}
-.sgroup{margin-bottom:26px;}
-.scat{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--m);margin-bottom:10px;font-weight:500;}
-.chips{display:flex;flex-wrap:wrap;gap:8px;}
-.chip{padding:7px 13px;border-radius:9px;font-size:.79rem;font-weight:500;border:1px solid var(--b2);background:var(--s1);color:var(--t);transition:all .25s;cursor:default;}
-.chip:hover{border-color:rgba(110,231,255,.25);background:rgba(110,231,255,.05);color:var(--p);transform:translateY(-2px);}
+/* DARK SECTIONS */
+.dark-section{background:var(--navy);color:#fff;border-radius:18px;margin:25px 0;padding:30px;position:relative;overflow:hidden}
+.section-heading{display:flex;align-items:center;gap:13px;margin-bottom:22px}
+.section-symbol{width:38px;height:38px;border:1px solid rgba(176,158,255,.45);color:#c6baff;border-radius:12px;display:grid;place-items:center;font-size:18px}
+.section-heading h2{font-size:22px;margin:0 0 3px}
+.section-heading p{font-size:12px;color:#9da7d4;margin:0}
+.skills-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.skill-group{padding:17px;border:1px solid rgba(164,151,255,.18);border-radius:13px;background:rgba(255,255,255,.03)}
+.skill-group h3{font:700 13px "DM Sans",sans-serif;margin-bottom:13px;color:#d9d7ff}
+.skill-group ul{padding:0;margin:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:9px 12px}
+.skill-group li{font-size:12.5px;color:#d1d7f2;display:flex;gap:8px;align-items:center;min-width:0}
+.skill-group li::before{content:"✦";color:#9c8aff;font-size:11px;width:20px;text-align:center;flex:0 0 20px}
+.skill-group li.has::before{display:none}
+.skill-group li img{width:20px;height:20px;flex:0 0 20px;background:#fff;border-radius:5px;padding:2px}
+.skill-group.wide ul{grid-template-columns:1fr 1fr}
+.skills-note{position:absolute;right:28px;top:22px;font-size:26px;color:#b5a5ff;transform:rotate(-6deg);line-height:1}
 
 /* CERTS */
-.clist{display:flex;flex-direction:column;gap:9px;}
-.citem{display:flex;align-items:center;gap:12px;padding:11px 15px;background:var(--s1);border:1px solid var(--b2);border-radius:12px;transition:border-color .3s;}
-.citem:hover{border-color:rgba(110,231,255,.2);}
-.cicon{width:32px;height:32px;border-radius:8px;background:rgba(110,231,255,.08);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;}
-.ctext{font-size:.81rem;color:var(--t);line-height:1.4;}
+.cert-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 25px 25px}
+.cert{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:13px;background:#fbfaff;font-size:13px;line-height:1.4}
+.cert-icon{width:34px;height:34px;flex:0 0 34px;border-radius:10px;background:#f0edff;display:grid;place-items:center;font-size:16px}
+.card-head{padding:25px 25px 16px}
+.card-head h2{font-size:24px;margin-bottom:4px}
+.card-head p{color:var(--muted);font-size:13px;margin:0}
 
-/* LANGS & QUALS */
-.lrow{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;}
-.lpill{padding:8px 16px;border-radius:10px;border:1px solid var(--b2);background:var(--s1);font-size:.8rem;display:flex;align-items:center;gap:8px;}
-.ldot{width:7px;height:7px;border-radius:50%;}
-.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
-.qitem{padding:9px 13px;border-radius:10px;border:1px solid var(--b2);background:var(--s1);font-size:.8rem;color:var(--m);display:flex;align-items:center;gap:8px;}
-.qitem::before{content:'✦';color:var(--a);font-size:.6rem;}
+/* PROJECTS */
+.projects-head{margin:36px 0 18px}
+.projects-head h2{margin-bottom:5px;font-size:28px}
+.projects-head p{color:var(--muted);font-size:13px;margin:0}
+.projects-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.project-card{border:1px solid var(--line);background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.project-card:hover{transform:translateY(-5px);box-shadow:0 18px 35px rgba(60,48,140,.16)}
+.project-cover{aspect-ratio:16/9;position:relative;background:linear-gradient(135deg,#131b45,#5037b5)}
+.project-cover.auction{background:linear-gradient(135deg,#17172e,#7e3b85)}
+.project-cover.shop{background:linear-gradient(135deg,#082d43,#1b7891)}
+.project-cover.dotnet{background:linear-gradient(135deg,#172347,#315ab0)}
+.project-cover.planning{background:linear-gradient(135deg,#173b39,#30a48a)}
+.project-cover.whatsapp{background:linear-gradient(135deg,#082f31,#0c936c)}
+.project-cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#080d19;display:block}
+.project-body{padding:16px;display:flex;flex-direction:column;flex:1}
+.pnum{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8a86b8;margin-bottom:4px;font-weight:600}
+.project-body h3{font-size:16px;margin-bottom:7px}
+.project-body p{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+.project-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
+.project-tags span{font-size:10px;padding:4px 8px;border-radius:6px;background:#f0edff;color:#5e4bc0;font-weight:600}
 
-/* EXPERIENCE */
-.egrid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
-.ctitle{font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;margin-bottom:26px;color:var(--m);text-transform:uppercase;letter-spacing:.1em;}
-.tl{position:relative;padding-left:26px;}
-.tl::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--p),transparent);}
-.ti{position:relative;margin-bottom:32px;}
-.ti::before{content:'';position:absolute;left:-30px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--p);box-shadow:0 0 10px rgba(110,231,255,.5);}
-.tdate{font-size:.7rem;color:var(--p);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
-.trole{font-family:'Syne',sans-serif;font-size:.96rem;font-weight:700;margin-bottom:2px;}
-.tplace{color:var(--m);font-size:.81rem;margin-bottom:5px;}
-.tdesc{color:var(--m);font-size:.8rem;line-height:1.72;}
+/* TIMELINE + CV */
+.timeline-wrap{display:grid;grid-template-columns:1fr;gap:22px;margin-top:34px;align-items:start}
+.timeline-card{background:var(--navy);color:#fff;border-radius:18px;padding:28px}
+.tl-block{margin-bottom:26px}
+.tl-label{font:700 12px "DM Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#b7aaff;margin-bottom:16px}
+.timeline{display:grid;gap:18px;position:relative}
+.timeline::before{content:"";position:absolute;left:16px;top:14px;bottom:14px;width:1px;background:rgba(150,132,255,.55)}
+.timeline-item{display:grid;grid-template-columns:34px 1fr;gap:13px;position:relative}
+.timeline-icon{z-index:1;width:33px;height:33px;display:grid;place-items:center;border-radius:50%;background:#6d52ee;color:#fff;font-size:14px}
+.timeline-item time{color:#b7aaff;font-size:11px;font-weight:600}
+.timeline-item h3{font:700 14px "DM Sans",sans-serif;margin:2px 0}
+.timeline-item .where{color:#d1d7f2;font-size:12.5px;margin:0 0 3px}
+.timeline-item .desc{color:#aeb7db;font-size:12px;margin:0}
 
 /* CONTACT */
-.cwrap{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start;}
-.cinfo h3{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:700;margin-bottom:12px;}
-.cinfo p{color:var(--m);font-size:.88rem;line-height:1.85;margin-bottom:26px;}
-.clinks{display:flex;flex-direction:column;gap:10px;}
-.clink{display:flex;align-items:center;gap:13px;color:var(--t);text-decoration:none;padding:12px 15px;border:1px solid var(--b2);border-radius:12px;transition:all .3s;background:var(--s1);font-size:.86rem;}
-.clink:hover{border-color:var(--b);background:rgba(110,231,255,.04);color:var(--p);transform:translateX(4px);}
-.clico{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.cllbl{font-size:.67rem;color:var(--m);margin-bottom:1px;}
-.cform{display:flex;flex-direction:column;gap:13px;}
-.fg{display:flex;flex-direction:column;gap:4px;}
-.flbl{font-size:.7rem;color:var(--m);text-transform:uppercase;letter-spacing:.08em;}
-.finp{padding:12px 14px;border-radius:11px;border:1px solid var(--b2);background:var(--s1);color:var(--t);font-family:'DM Sans',sans-serif;font-size:.87rem;outline:none;transition:border-color .3s,background .3s;}
-.finp:focus{border-color:rgba(110,231,255,.3);background:rgba(110,231,255,.03);}
-.finp::placeholder{color:var(--m);opacity:.5;}
-textarea.finp{min-height:125px;resize:vertical;}
-.bsub{padding:13px 26px;background:var(--p);color:#04060F;font-weight:700;font-size:.87rem;border-radius:11px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .3s;}
-.bsub:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(110,231,255,.25);}
 
-/* FOOTER */
-footer{background:var(--s1);border-top:1px solid var(--b2);padding:60px 60px 36px;}
-.finner{max-width:1200px;margin:0 auto;}
-.ftop{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:60px;padding-bottom:46px;border-bottom:1px solid var(--b2);}
-.fbname{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:800;letter-spacing:-.02em;margin-bottom:11px;}
-.fbname span{color:var(--p);}
-.fb p{color:var(--m);font-size:.84rem;line-height:1.85;max-width:300px;margin-bottom:24px;}
-.srow{display:flex;gap:10px;}
-.sbtn{width:42px;height:42px;border-radius:11px;border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all .3s;background:var(--s2);}
-.sbtn:hover{transform:translateY(-3px);}
-.sbtn.li:hover{background:rgba(10,102,194,.15);border-color:rgba(10,102,194,.35);}
-.sbtn.fb2:hover{background:rgba(24,119,242,.13);border-color:rgba(24,119,242,.35);}
-.sbtn.gh:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);}
-.fcol h4{font-family:'Syne',sans-serif;font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px;color:var(--t);}
-.fcol ul{list-style:none;}
-.fcol li{margin-bottom:9px;}
-.fcol a{color:var(--m);text-decoration:none;font-size:.84rem;transition:color .3s;}
-.fcol a:hover{color:var(--p);}
-.fbot{display:flex;justify-content:space-between;align-items:center;padding-top:26px;}
-.fbot p{color:var(--m);font-size:.78rem;}
-.made{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--m);}
-.heart{color:var(--a2);}
-.pthumb {
-  position: relative;
-  height: 160px; /* 🔥 taille du cadre (ajuste 140–200px) */
-  overflow: hidden;
-  border-radius: 12px 12px 0 0;
-  background: linear-gradient(135deg,#060F22,#0D1A38);
+/* ===== CONTACT : formulaire sombre + coordonnées claires ===== */
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  margin: 25px 0;
+  align-items: stretch;
 }
 
-.pthumb video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* remplit le cadre sans déformer */
+/* Formulaire : même fond que Expérience & Formation */
+.contact-section .contact-form {
+  min-width: 0;
+  padding: 30px;
+  color: #fff;
+  background: var(--navy);
+  border: 1px solid rgba(164, 151, 255, .20);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
 }
 
-.pbar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3px;
-  width: 100%;
-}
-/* ANIM */
-@keyframes fadeUp{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
-.fu{opacity:0;animation:fadeUp .8s cubic-bezier(.23,1,.32,1) forwards;}
-.d1{animation-delay:.05s;}.d2{animation-delay:.15s;}.d3{animation-delay:.25s;}.d4{animation-delay:.38s;}.d5{animation-delay:.52s;}
-
-/* RESPONSIVE */
-@media(max-width:960px){
-  nav{padding:0 22px;}nav ul{gap:18px;}
-  header{padding:100px 22px 60px;}
-  .hero-inner{grid-template-columns:1fr;}
-  h1{font-size:2.7rem;}
-  .hvisual{display:none;}
-  section{padding:60px 22px;}
-  .astrip{padding:36px 22px;}.ainner{grid-template-columns:1fr;}
-  .pgrid{grid-template-columns:1fr;}
-  .skwrap{grid-template-columns:1fr;gap:40px;}
-  .egrid{grid-template-columns:1fr;gap:36px;}
-  .cwrap{grid-template-columns:1fr;gap:38px;}
-  footer{padding:40px 22px 28px;}.ftop{grid-template-columns:1fr;gap:32px;}
-  .fbot{flex-direction:column;gap:8px;text-align:center;}
-  .pcard {
-  border-radius: 14px;
-  overflow: hidden;
-  background: #0b1224;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+/* Petit titre décoratif */
+.contact-kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #c2b7ff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .16em;
 }
 
-.pthumb {
-  position: relative;
-  height: 180px;
-  overflow: hidden;
-  background: linear-gradient(135deg,#060F22,#0D1A38);
+.contact-section .contact-form h2 {
+  margin-bottom: 13px;
+  color: #fff;
+  font-size: clamp(23px, 2.5vw, 30px);
+  line-height: 1.25;
 }
 
-.pthumb video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
+.contact-section .contact-form > p {
+  color: #c5cbe7;
+  font-size: 13px;
+  line-height: 1.8;
 }
 
-/* overlay play */
-.play-overlay {
-  position: absolute;
-  inset: 0;
+/* Blocs CDI / stage / freelance et projet */
+.contact-opportunities {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  color: white;
-  background: rgba(0,0,0,0.25);
-  opacity: 0;
-  transition: 0.3s;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 13px;
+  padding: 13px;
+  border: 1px solid rgba(164, 151, 255, .18);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, .045);
 }
 
-/* hover effects */
-.pthumb:hover .play-overlay {
+.contact-opportunities-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  color: #d4cbff;
+  background: rgba(118, 87, 255, .19);
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.contact-opportunities strong {
+  display: block;
+  margin: 1px 0 3px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.contact-section .contact-form .contact-opportunities p {
+  margin: 0;
+  color: #aeb8dc;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Formulaire : deux champs par ligne sur grand écran */
+.contact-section #contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 14px;
+  margin-top: 23px;
+}
+
+.contact-section #contact-form .field {
+  min-width: 0;
+  margin: 0;
+}
+
+/* Objet et message occupent toute la largeur */
+.contact-section #contact-form .field:nth-of-type(3),
+.contact-section #contact-form .field:nth-of-type(4),
+.contact-section #contact-form #contact-submit,
+.contact-section #contact-form #form-status {
+  grid-column: 1 / -1;
+}
+
+/* Libellés */
+.contact-section #contact-form .field label {
+  display: block;
+  margin-bottom: 7px;
+  color: #e2e4fa;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Champs adaptés au fond sombre */
+.contact-section #contact-form .field input,
+.contact-section #contact-form .field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  color: #fff;
+  background: #111a3a;
+  border: 1px solid #30395e;
+  border-radius: 11px;
+  outline: none;
+  font: inherit;
+  font-size: 13px;
+  transition: border-color .2s ease, box-shadow .2s ease,
+              background-color .2s ease;
+}
+
+.contact-section #contact-form .field input {
+  min-height: 47px;
+}
+
+.contact-section #contact-form .field textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.contact-section #contact-form .field input::placeholder,
+.contact-section #contact-form .field textarea::placeholder {
+  color: #8993b8;
   opacity: 1;
 }
 
-.pthumb:hover video {
-  transform: scale(1.05);
+.contact-section #contact-form .field input:hover,
+.contact-section #contact-form .field textarea:hover {
+  border-color: #555080;
 }
 
-.pbar {
-  position: absolute;
-  bottom: 0;
-  height: 3px;
-  width: 100%;
-  background: linear-gradient(90deg,#38BDF8,#A78BFA);
-}
-}
-/* Intégration des vidéos YouTube */
-.pthumb {
-  position: relative;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 12px 12px 0 0;
-  background: #0D1A38;
+.contact-section #contact-form .field input:focus,
+.contact-section #contact-form .field textarea:focus {
+  background: #141e42;
+  border-color: #9884ff;
+  box-shadow: 0 0 0 3px rgba(118, 87, 255, .18);
 }
 
-.pthumb iframe {
-  display: block;
+.contact-section #contact-form .field:focus-within label {
+  color: #c6baff;
+}
+
+/* Bouton d'envoi */
+.contact-section #contact-submit {
   width: 100%;
-  height: 100%;
+  min-height: 48px;
+  margin-top: 0 !important;
   border: 0;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
 }
 
-.pthumb .pbar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3px;
-  width: 100%;
-  background: linear-gradient(90deg, #38BDF8, #A78BFA);
+.contact-section #contact-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(118, 87, 255, .28);
 }
 
-@media (max-width: 960px) {
-  .pthumb {
-    height: 220px;
+.contact-section #contact-submit:disabled {
+  opacity: .7;
+  cursor: wait;
+}
+
+/* Messages EmailJS : chargement, succès, erreur */
+.contact-section #form-status {
+  display: none;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.contact-section #form-status.is-visible {
+  display: flex;
+  animation: contactStatusIn .25s ease both;
+}
+
+.contact-section #form-status.is-loading {
+  color: #d3caff;
+  background: #1a2046;
+  border-color: #41366f;
+}
+
+.contact-section #form-status.is-loading::before {
+  content: "";
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+  border: 2px solid #49416f;
+  border-top-color: #b8a7ff;
+  border-radius: 50%;
+  animation: contactSpinner .7s linear infinite;
+}
+
+.contact-section #form-status.is-success {
+  color: #a9f2d0;
+  background: #102f30;
+  border-color: #245a4b;
+}
+
+.contact-section #form-status.is-success::before {
+  content: "✓";
+  flex: 0 0 20px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.contact-section #form-status.is-error {
+  color: #ffc0cd;
+  background: #351b31;
+  border-color: #704054;
+}
+
+.contact-section #form-status.is-error::before {
+  content: "!";
+  flex: 0 0 20px;
+  text-align: center;
+  font-weight: 800;
+}
+
+/* Coordonnées : conserver le fond blanc */
+.contact-section .contact-info {
+  min-width: 0;
+  padding: 30px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid rgba(118, 87, 255, .12);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.contact-section .contact-info h2 {
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-size: 24px;
+}
+
+.contact-section .contact-info > p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.contact-section .contact-details {
+  display: grid;
+  gap: 12px;
+  margin: 23px 0;
+}
+
+.contact-section .contact-details .detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 10px;
+  margin: 0;
+  color: #555d80;
+  background: #faf9ff;
+  border: 1px solid #efedfb;
+  border-radius: 12px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+  transition: background .2s ease, border-color .2s ease,
+              transform .2s ease;
+}
+
+.contact-section .contact-details a.detail:hover {
+  background: #f2efff;
+  border-color: #dcd4ff;
+  transform: translateX(3px);
+}
+
+.contact-section .detail-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  color: #694ce9;
+  background: #f0edff;
+  border-radius: 10px;
+}
+
+.contact-section .contact-info .socials {
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.contact-section .contact-info .socials a {
+  color: #5141b5;
+  background: #faf9ff;
+  border-color: #ded9ff;
+}
+
+.contact-section .contact-info .socials a:hover {
+  color: #fff;
+  background: var(--purple);
+  border-color: var(--purple);
+  transform: translateY(-2px);
+}
+
+.contact-section .contact-note {
+  margin-top: 26px;
+  color: #7357ff;
+  font-size: 27px;
+  line-height: 1.1;
+  text-align: right;
+}
+
+/* Animations limitées au contact */
+@keyframes contactStatusIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes contactSpinner {
+  to { transform: rotate(360deg); }
+}
+
+/* Tablette */
+@media (max-width: 1000px) {
+  .contact-section {
+    grid-template-columns: 1fr;
   }
 }
-.pthumb video {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background: #080d19;
+
+/* Téléphone */
+@media (max-width: 600px) {
+  .contact-section {
+    gap: 17px;
+  }
+
+  .contact-section .contact-form,
+  .contact-section .contact-info {
+    padding: 21px;
+  }
+
+  .contact-section #contact-form {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .contact-section #contact-form .field:nth-of-type(3),
+  .contact-section #contact-form .field:nth-of-type(4),
+  .contact-section #contact-form #contact-submit,
+  .contact-section #contact-form #form-status {
+    grid-column: 1;
+  }
+
+  .contact-section .contact-form h2 {
+    font-size: 24px;
+  }
+
+  .contact-section .contact-note {
+    font-size: 24px;
+  }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-section *,
+  .contact-section *::before,
+  .contact-section *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+.quote-banner{background:linear-gradient(90deg,#090e2c 42%,rgba(9,14,44,.35)),url("./public/hero-anime.jpg") 78% 42%/cover,#090e2c;text-align:left;color:#fff;border-radius:17px;padding:44px 5% 44px;margin:25px 0}
+.quote-banner blockquote{font:italic 500 22px/1.5 Syne,sans-serif;margin:0}
+.quote-banner span{color:var(--pink)}
+footer{background:var(--navy);color:#fff;padding:30px 4% 15px}
+.footer-inner{max-width:1440px;margin:auto;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+.footer-copy{color:#9ea7ce;font-size:12px;margin-top:10px}
+.footer-links{display:flex;flex-wrap:wrap;gap:17px;font-size:12px;color:#d1d6f2;align-items:center}
+.copyright{max-width:1440px;margin:22px auto 0;padding-top:13px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;color:#8790b8;font-size:11px;gap:10px}
+
+.stats{display:grid;grid-template-columns:1fr;align-items:center;gap:10px;background:linear-gradient(135deg,#efedff,#e2deff);border-radius:18px;padding:26px 30px;margin:25px 0;position:relative;overflow:hidden}
+.stats-quote{text-align:left;font-size:26px;line-height:1.1;color:#4c3bb5;padding-right:250px;position:relative;z-index:1}
+.mountain{position:absolute;right:0;bottom:0;width:230px;height:100%;opacity:.9}
+/* ANIMATION PARCOURS */
+.timeline::after{content:"";position:absolute;left:15.5px;top:14px;width:2px;height:calc((100% - 28px) * var(--p,0));background:linear-gradient(#a99aff,#ff8bd5);box-shadow:0 0 12px #a99aff;border-radius:2px}
+.timeline-icon{animation:ring 2.8s ease-out infinite;transition:transform .25s}
+.timeline-item:nth-child(2) .timeline-icon{animation-delay:.5s}.timeline-item:nth-child(3) .timeline-icon{animation-delay:1s}.timeline-item:nth-child(4) .timeline-icon{animation-delay:1.5s}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(150,132,255,.6)}70%,100%{box-shadow:0 0 0 14px rgba(150,132,255,0)}}
+.timeline-item:hover .timeline-icon{transform:scale(1.15) rotate(-6deg)}
+.timeline-item h3{transition:color .25s}.timeline-item:hover h3{color:#c7bcff}
+.js .tl-it{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.1,1)}
+.js .tl-it.in{opacity:1;transform:none}
+.section-symbol{animation:bob 3.5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-4px) rotate(8deg)}}
+/* REVEAL */
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .rv,.js .tl-it{opacity:1;transform:none}.timeline::after{height:calc(100% - 28px)}}
+@media(max-width:1000px){
+  .hand-note{display:none}
+  .nav{flex-wrap:wrap}.nav-links{order:3;width:100%;overflow-x:auto;padding:4px 0}
+  .hero-art{width:100%;opacity:.5}
+  .hero-art img{object-position:70% center;-webkit-mask-image:none;mask-image:none}
+  .hero-inner{padding:64px 5% 70px}
+  .hero-copy{max-width:100%}
+    .about-grid,.timeline-wrap,.contact-section{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .stats-quote{text-align:center;padding:0;font-size:22px}.mountain{display:none}
+  .projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  .layout{padding:18px 4%}.about-card{grid-template-columns:1fr;padding:20px}
+  .dark-section,.timeline-card{padding:21px}
+  .skills-grid,.projects-grid,.cert-grid{grid-template-columns:1fr}
+  .cert-grid{padding:0 18px 20px}.card-head{padding:20px 18px 14px}
+    .contact-form,.contact-info{padding:21px}
+  .copyright{flex-direction:column}
+}
+
+
+
+/* ===== Contact : améliorations légères ===== */
+
+.contact-section {
+  align-items: stretch;
+}
+
+.contact-form,
+.contact-info {
+  border: 1px solid rgba(118, 87, 255, 0.10);
+  border-radius: 16px;
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+
+.contact-form:hover,
+.contact-info:hover {
+  border-color: rgba(118, 87, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(70, 53, 150, 0.06);
+}
+
+/* Titres : petit accent discret */
+.contact-form h2,
+.contact-info h2 {
+  position: relative;
+}
+
+.contact-form h2::after,
+.contact-info h2::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin-top: 9px;
+  border-radius: 5px;
+  background: #8872f4;
+  transition: width .3s ease;
+}
+
+.contact-form:hover h2::after,
+.contact-info:hover h2::after {
+  width: 52px;
+}
+
+/* Champs du formulaire */
+.field input,
+.field textarea {
+  box-sizing: border-box;
+  transition: border-color .25s ease,
+              box-shadow .25s ease,
+              background-color .25s ease;
+}
+
+.field input:hover,
+.field textarea:hover {
+  border-color: #c4b9fa;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: #8872f4;
+  box-shadow: 0 0 0 3px rgba(118, 87, 255, .12);
+}
+
+.field label {
+  transition: color .2s ease;
+}
+
+.field:focus-within label {
+  color: #7357ff;
+}
+
+/* Bouton : animation légère sans changer sa taille */
+#contact-submit {
+  transition: transform .22s ease,
+              box-shadow .22s ease,
+              opacity .22s ease;
+}
+
+#contact-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(118, 87, 255, .20);
+}
+
+#contact-submit:active:not(:disabled) {
+  transform: translateY(0) scale(.99);
+}
+
+#contact-submit:disabled {
+  cursor: wait;
+  opacity: .75;
+}
+
+/* Message EmailJS */
+#form-status {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+#form-status.is-visible {
+  animation: contactStatusIn .3s ease both;
+}
+
+#form-status.is-loading {
+  color: #7357ff;
+}
+
+#form-status.is-success {
+  color: #16856b;
+}
+
+#form-status.is-error {
+  color: #d94668;
+}
+
+@keyframes contactStatusIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Coordonnées */
+.contact-details .detail {
+  padding: 7px;
+  margin: -7px;
+  border-radius: 12px;
+  transition: background-color .25s ease,
+              transform .25s ease;
+}
+
+.contact-details a.detail:hover {
+  background-color: rgba(118, 87, 255, .045);
+  transform: translateX(3px);
+}
+
+.detail-icon {
+  transition: transform .25s ease;
+}
+
+.detail:hover .detail-icon {
+  transform: scale(1.06);
+}
+
+/* Réseaux sociaux */
+.contact-info .socials a {
+  transition: transform .25s ease,
+              box-shadow .25s ease,
+              border-color .25s ease;
+}
+
+.contact-info .socials a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 13px rgba(118, 87, 255, .13);
+}
+
+/* Phrase manuscrite */
+.contact-note {
+  transition: transform .3s ease;
+}
+
+.contact-info:hover .contact-note {
+  transform: translateY(-2px);
+}
+
+/* Citation */
+.quote-banner {
+  transition: background-position .5s ease;
+}
+
+.quote-banner blockquote {
+  transition: transform .3s ease;
+}
+
+.quote-banner:hover blockquote {
+  transform: translateX(3px);
+}
+
+.quote-banner span {
+  display: inline-block;
+  transition: transform .3s ease;
+}
+
+.quote-banner:hover span {
+  transform: scale(1.15);
+}
+
+/* Bloc statistiques */
+.stats {
+  transition: box-shadow .3s ease;
+}
+
+.stats:hover {
+  box-shadow: 0 8px 22px rgba(76, 59, 181, .08);
+}
+
+.mountain {
+  transition: transform .5s ease;
+}
+
+.stats:hover .mountain {
+  transform: translateY(-3px);
+}
+
+/* Liens du footer */
+.footer-links a {
+  transition: color .2s ease;
+}
+
+.footer-links a:hover {
+  color: #c4b5fd;
+}
+
+/* Accessibilité : limiter les animations si nécessaire */
+@media (prefers-reduced-motion: reduce) {
+  .contact-section *,
+  .quote-banner *,
+  .stats *,
+  footer * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===== Messages du formulaire EmailJS ===== */
+
+#form-status {
+  display: none;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  margin: 14px 0 0;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  animation: formMessageIn .3s ease both;
+}
+
+#form-status.is-visible {
+  display: flex;
+}
+
+/* Icône du message */
+#form-status::before {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* Envoi en cours */
+#form-status.is-loading {
+  color: #6550c8;
+  background: #f3f0ff;
+  border-color: #ded6ff;
+}
+
+#form-status.is-loading::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  flex-basis: 14px;
+  margin: 2px 3px;
+  border: 2px solid #d5ccff;
+  border-top-color: #7657ff;
+  border-radius: 50%;
+  animation: formSpinner .7s linear infinite;
+}
+
+/* Succès */
+#form-status.is-success {
+  color: #137653;
+  background: #eafaf2;
+  border-color: #b8ebd0;
+}
+
+#form-status.is-success::before {
+  content: "✓";
+  color: #fff;
+  background: #20a875;
+}
+
+/* Erreur */
+#form-status.is-error {
+  color: #b42345;
+  background: #fff0f2;
+  border-color: #ffcbd4;
+}
+
+#form-status.is-error::before {
+  content: "!";
+  color: #fff;
+  background: #df4665;
+}
+
+/* Apparition douce */
+@keyframes formMessageIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Rotation de l'indicateur d'envoi */
+@keyframes formSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #form-status,
+  #form-status::before {
+    animation: none !important;
+  }
+}
+
+
+/* CONTACT : mise en page plus équilibrée */
+#contact.contact-section {
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  align-items: stretch;
+  gap: 22px;
+}
+
+/* Formulaire sombre */
+#contact .contact-form {
+  background: linear-gradient(145deg, #101735, #080d25);
+  color: #fff;
+  border: 1px solid rgba(118, 87, 255, 0.25);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 14px 35px rgba(8, 13, 37, 0.13);
+}
+
+#contact .contact-form h2 {
+  color: #fff;
+  line-height: 1.25;
+}
+
+#contact .contact-form > p {
+  color: #c5cce5;
+  line-height: 1.7;
+}
+
+#contact .contact-form .contact-kicker {
+  color: #c5b9ff;
+}
+
+/* Champs plus compacts et mieux alignés */
+#contact #contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+#contact #contact-form .field {
+  margin: 0;
+  min-width: 0;
+}
+
+#contact #contact-form .field:nth-of-type(4),
+#contact #contact-form #contact-submit,
+#contact #contact-form #form-status {
+  grid-column: 1 / -1;
+}
+
+#contact .contact-form .field label {
+  color: #e7e8ff;
+  margin-bottom: 7px;
+}
+
+#contact .contact-form .field input,
+#contact .contact-form .field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 13px;
+  color: #fff;
+  background: #0d1430;
+  border: 1px solid #343d65;
+  border-radius: 11px;
+}
+
+#contact .contact-form .field input::placeholder,
+#contact .contact-form .field textarea::placeholder {
+  color: #8993bb;
+}
+
+#contact .contact-form .field input:focus,
+#contact .contact-form .field textarea:focus {
+  border-color: #9b87ff;
+  box-shadow: 0 0 0 3px rgba(118, 87, 255, 0.17);
+  outline: none;
+}
+
+#contact .contact-form .field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#contact #contact-form #contact-submit {
+  width: 100%;
+  margin-top: 2px !important;
+}
+
+/* Coordonnées : conserver le fond blanc */
+#contact .contact-info {
+  background: #fff;
+  color: #171a3b;
+  border: 1px solid #e8e5f5;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 14px 35px rgba(23, 26, 59, 0.06);
+}
+
+#contact .contact-info h2 {
+  color: #171a3b;
+}
+
+#contact .contact-info > p {
+  color: #687092;
+  line-height: 1.7;
+}
+
+#contact .contact-info .contact-details {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+#contact .contact-info .detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #faf9ff;
+  border: 1px solid #eeeaf8;
+  border-radius: 12px;
+  color: #343653;
+  overflow-wrap: anywhere;
+}
+
+#contact .contact-info .detail-icon {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: #f0edff;
+  color: #7657ff;
+  border-radius: 10px;
+}
+
+#contact .contact-info .socials {
+  margin-top: 22px;
+}
+
+#contact .contact-info .contact-note {
+  margin-top: 22px;
+  padding: 16px;
+  background: #f7f5ff;
+  border: 1px solid #eee8ff;
+  border-radius: 13px;
+  color: #7357ff;
+}
+
+/* Adaptation mobile */
+@media (max-width: 760px) {
+  #contact.contact-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #contact .contact-form,
+  #contact .contact-info {
+    padding: 22px;
+  }
+
+  #contact #contact-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #contact #contact-form .field:nth-of-type(4),
+  #contact #contact-form #contact-submit,
+  #contact #contact-form #form-status {
+    grid-column: 1;
+  }
+}
+
+
+/* Informations complémentaires de la carte contact */
+#contact .contact-availability {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 20px 0;
+  padding: 11px 13px;
+  border-radius: 12px;
+  background: #f0faf4;
+  color: #26784a;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#contact .availability-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #35b875;
+  box-shadow: 0 0 0 4px #d9f4e4;
+}
+
+#contact .contact-info .detail small {
+  display: block;
+  margin-bottom: 4px;
+  color: #8588a5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#contact .contact-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+#contact .contact-skills span {
+  padding: 8px 11px;
+  border: 1px solid #e5dfff;
+  border-radius: 20px;
+  background: #f7f5ff;
+  color: #6248c9;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+#contact .contact-info .contact-note {
+  line-height: 1.8;
+}
+
+#contact .contact-info .contact-note strong {
+  color: #6248c9;
+  font-weight: 600;
+}
+
 </style>
 </head>
-
 <body>
-  
-<div id="cg"></div>
-
-<!-- NAV -->
-<nav>
-  <a href="#" class="logo">Zina<span>.</span>dev</a>
-  <ul>
-    <li><a href="#projets">Projets</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#parcours">Parcours</a></li>
-    <li><a href="#contact" class="ncta">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<header>
-  <div class="hgrid"></div>
-  <div class="hg1"></div>
-  <div class="hg2"></div>
-  <div class="hero-inner">
-    <div>
-      <div class="badge fu d1"><span class="dot"></span>Disponible · Sfax, Tunisie</div>
-      <h1 class="fu d2">Full Stack<br>Developer</h1>
-      <div class="hname fu d3">Zina Ben Belgacem</div>
-      <p class="hsub fu d4">
-        Développeuse Full Stack · Master Professionnel en Génie Logiciel (DSIR) · Passionnée par l'IA, les systèmes distribués et la création d'applications robustes avec Spring Boot, Angular, React et Flutter.
-      </p>
-      <div class="hact fu d5">
-        <!-- Le PDF doit exister exactement sous ce nom dans le dossier public/. -->
-        <a href="./public/CV_Zina_Ben_Belgacem_FullStack_AI_FR (1).pdf" class="btn1" download>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-
-          Télécharger CV
-        </a>
-        <a href="#projets" class="btn2">Voir mes projets →</a>
-      </div>
+<header class="site-header">
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="brand" href="#accueil"><span class="brand-mark">&lt;/&gt;</span><span>Zina Ben Belgacem</span></a>
+    <div class="nav-links">
+      <a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#certifications">Certifications</a><a href="#experience">Parcours</a><a href="#contact">Contact</a>
     </div>
-    <div class="hvisual fu d3">
-      <div class="awrap">
-        <div class="aring"></div>
-        <div class="amask"></div>
-        <div class="aphoto">
-          <!-- Le fichier photo doit exister exactement à ce chemin dans le dossier public/. -->
-          <img src="./public/449610093_7724964190956215_4291587629864170296_n.jpg"
-               alt="Zina Ben Belgacem"
-               id="avatarImg"/>
-        </div>
-      </div>
-      
-<div class="hstats">
-  <div class="spill">
-    <div class="snum">Master</div>
-    <div class="slbl">Génie logiciel</div>
-  </div>
-
-  <div class="spill">
-    <div class="snum">Full Stack</div>
-    <div class="slbl">Développement</div>
-  </div>
-
-  <div class="spill">
-    <div class="snum">IA</div>
-    <div class="slbl">Automatisation</div>
-  </div>
-</div>
-
-    </div>
-  </div>
+  </nav>
 </header>
 
-<!-- ABOUT STRIP -->
-<div class="astrip">
-  <div class="ainner">
-    <div class="acard">
-      <div class="aicon" style="background:rgba(110,231,255,.08);">🎓</div>
-      <h3>Formation</h3>
-      <p>Master Professionnel DSIR / Génie Logiciel · ISET Sfax<br>Licence Développement des Systèmes d'Information — 2023/2024</p>
-    </div>
-   <div class="acard">
-  <div class="aicon" style="background:rgba(184,169,255,.08);">💻</div>
-  <h3>Développement Web, Mobile & IA</h3>
-  <p>
-    Conception d’applications web et mobiles modernes, intégration d’intelligence artificielle,
-    développement d’APIs performantes et mise en place d’architectures évolutives (microservices).
-  </p>
-</div>
-    <div class="acard">
-      <div class="aicon" style="background:rgba(255,127,154,.08);">📍</div>
-      <h3>Localisation</h3>
-      <p>Sfax, Tunisie · Disponible en présentiel et en remote · Ouverte aux opportunités en Tunisie et à l'international.</p>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- PROJETS -->
-<section id="projets">
-  <div class="slabel">Portfolio</div>
-  <h2 class="stitle">Projets réalisés</h2>
-  <div class="pgrid">
-
-<div class="pcard">
-<div class="pthumb ">
-<video controls playsinline preload="metadata">
-    <source src="./public/Ged.mp4" type="video/mp4">
-    Votre navigateur ne prend pas en charge la lecture vidéo.
-</video>
-  <div class="pbar"></div>
-</div>
-
-  <div class="pbody">
-    <div class="pnum">01 — IA & Document</div>
-    <div class="ptitle">GED & Chatbot IA</div>
-    <p class="pdesc">
-      Système intelligent de gestion documentaire avec workflow BPM, chatbot IA et automatisation du cycle de vie des documents.
-    </p>
-            <div class="tags">
-<span class="tag r">Next.js</span>              <span class="tag">Spring Boot</span><span class="tag v">kafka</span>
-              <span class="tag">Camunda</span><span class="tag">Nextcloud</span><span class="tag">PostgreSQL</span></div>
-  </div>
-</div>
-
-    <div class="pcard">
-<div class="pthumb" data-yt>
-<video controls playsinline preload="metadata">
-    <source src="./public/Enchere.mp4" type="video/mp4">
-    Votre navigateur ne prend pas en charge la lecture vidéo.
-</video>
-  <div class="pbar"></div>
-</div>
-
-      <div class="pbody">
-        <div class="pnum">02 — Stage fin d'études · Elite Tech Gabès</div>
-        <div class="ptitle">Plateforme d’Enchères en Temps Réel</div>
-        <p class="pdesc">Développement d’une plateforme d’enchères en temps réel avec Angular et Spring Boot. Gestion des enchères, communication instantanée via WebSocket, authentification sécurisée et système de commentaires.</p>
-        <div class="tags"><span class="tag r">Angular</span><span class="tag">Spring Boot</span><span class="tag v">Mysql</span><span class="tag">Java</span></div>
+<main>
+<section class="hero" id="accueil">
+  <div class="hero-art"><img src="./public/hero-anime.jpg" alt="Illustration style anime : une développeuse devant son ordinateur, de nuit" width="1428" height="906" fetchpriority="high"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">● Disponible · Sfax, Tunisie</div>
+      <p class="hi">Bonjour, je suis</p>
+      <h1>Zina Ben Belgacem</h1>
+      <div class="role">Développeuse Full Stack</div>
+      <p class="lead">Titulaire d’un Master Professionnel en Génie Logiciel (DSIR), spécialisée dans le développement d’applications web et mobiles full stack. Passionnée par l’intelligence artificielle et l’automatisation, je conçois des solutions performantes et évolutives en combinant Spring Boot, React, Angular et Flutter, 
+        avec un intérêt particulier pour les chatbots IA, les architectures distribuées et l’intégration de services intelligents.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projets">Découvrir mes projets →</a>
+        <a class="btn btn-outline" href="./public/cv.pdf" download="CV_Zina_Ben_Belgacem.pdf">Télécharger mon CV ↓</a>
       </div>
-    </div>
-
-    <div class="pcard">
-<div class="pthumb" data-yt>
-<video controls playsinline preload="metadata"
-       aria-label="Démonstration de la plateforme e-commerce">
-    <source src="./public/Video%20Project%205.mp4" type="video/mp4">
-    Votre navigateur ne prend pas en charge la lecture vidéo.
-</video>
-
-  <div class="pbar"></div>
-</div>
-      <div class="pbody">
-        <div class="pnum">03 — Stage perfectionnement · Business Software</div>
-        <div class="ptitle">Plateforme e-commerce</div>
-        <p class="pdesc">Application de commerce électronique complète développée en collaboration. Gestion produits, panier et paiement sécurisé.</p>
-        <div class="tags"><span class="tag v">React</span><span class="tag">Node.js</span><span class="tag">MySQL</span></div>
-      </div>
-    </div>
-<div class="pcard">
- <div class="pthumb" data-yt>
-<video controls playsinline preload="metadata"
-       aria-label="Démonstration du projet de commerce digital .NET">
-    <source src="./public/Video%20Project%204.mp4" type="video/mp4">
-    Votre navigateur ne prend pas en charge la lecture vidéo.
-</video>
- 
-    <div class="pbar"></div>
-  </div>
-  <div class="pbody">
-    <div class="pnum">04 — Commerce digital</div>
-    <div class="ptitle">Plateforme de commerce digital</div>
-    <p class="pdesc">
-      Plateforme e-commerce développée en .NET permettant la gestion des produits,
-      commandes et utilisateurs avec une architecture sécurisée et performante.
-    </p>
-    <div class="tags">
-      <span class="tag r">.NET</span>
-      <span class="tag">Entity Framework</span>
-      <span class="tag">SQL Server</span>
-    </div>
-  </div>
-</div>
-
-<div class="pcard">
-  <div class="pthumb video-hover">
- <video controls playsinline preload="metadata"
-       aria-label="Démonstration de la planification universitaire">
-    <source src="./public/Video%20Project%206.mp4" type="video/mp4">
-    Votre navigateur ne prend pas en charge la lecture vidéo.
-</video>
-    <div class="pbar"></div>
-  </div>
-  <div class="pbody">
-    <div class="pnum">05 — Planification universitaire</div>
-    <div class="ptitle">Calendrier &amp; Planification universitaire</div>
-    <p class="pdesc">
-      Système complet de gestion des emplois du temps universitaires.
-      Planification automatique avec détection des conflits et gestion des
-      enseignants, salles, étudiants, départements, groupes et matières.
-    </p>
-    <div class="tags">
-      <span class="tag v">Angular</span>
-      <span class="tag">Flutter</span>
-      <span class="tag">MySQL</span>
-    </div>
-  </div>
-</div>
-
-    <!-- Projet IA Automation : assistant WhatsApp orchestré avec n8n -->
-    <div class="pcard">
-        <div class="pthumb video-hover">
-       <video controls playsinline preload="metadata"
-       aria-label="Démonstration d'assistant_whatsapp">
-    <source   src="./public/demo_assistant_whatsapp_portfolio.mp4"
- type="video/mp4">
-    Votre navigateur ne prend pas en charge la lecture vidéo.
-</video>
-        <div class="pbar"></div>
-      </div>
-      <div class="pbody">
-<div class="pnum">06 — IA & Automatisation</div>
-<div class="ptitle">Assistant IA conversationnel sur WhatsApp</div>
-
-<p class="pdesc">
-  Développement d’un assistant conversationnel intelligent connecté à WhatsApp
-  via la WhatsApp Cloud API. Automatisation des réponses aux demandes courantes,
-  gestion du contexte des conversations et transfert des demandes nécessitant
-  une intervention humaine par notification e-mail. Mise en place d’un mécanisme
-  de fallback entre plusieurs modèles de langage (LLM) pour améliorer la
-  continuité du service.
-</p>
-
-<div class="tags">
-  <span class="tag r">n8n</span>
-  <span class="tag">WhatsApp Cloud API</span>
-  <span class="tag v">Webhooks</span>
-  <span class="tag">LLM Integration</span>
-  <span class="tag">Groq</span>
-  <span class="tag">Google Gemini</span>
-  <span class="tag">Ollama</span>
-  <span class="tag v">AI Automation</span>
-  <span class="tag">Prompt Engineering</span>
-</div>
+      <div class="socials">
+        <a href="https://github.com/zinabenbelgacem" aria-label="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
+        <a href="https://www.linkedin.com/in/zina-ben-belgacem-b1761227b/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+        <a href="mailto:benbelgassemzina@gmail.com" aria-label="E-mail">✉</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<div class="layout">
+  <section class="about-grid" id="apropos">
+    <article class="card about-card rv">
+      <div>
+        <div class="avatar"><img src="./public/zina.png" alt="Zina Ben Belgacem" loading="lazy" width="132" height="132"></div>
+        <div class="scribble hand">Toujours en mode<br>apprentissage ♡</div>
+      </div>
+      <div class="about-copy">
+        <h2 class="section-title">À propos de moi</h2>
+        <p>Développeuse Full Stack à Sfax, titulaire d’une Licence en Développement des Systèmes d’Information et d’un Master Professionnel DSIR — Génie Logiciel à l’ISET Sfax. Je conçois des applications web et mobiles, des API performantes et des solutions d’automatisation intégrant des assistants IA, avec des architectures évolutives (microservices).</p>
+        <div class="chips"><span class="chip">⌖ Sfax, Tunisie</span><span class="chip">◎ Présentiel et remote</span><span class="chip">✧ Master DSIR — Génie logiciel</span><span class="chip">IA &amp; automatisation n8n</span></div>
+      </div>
+    </article>
+    <aside class="card values-card rv">
+      <h3>Mes qualités</h3>
+      <div class="value"><span class="value-icon">☼</span> Créativité</div>
+      <div class="value"><span class="value-icon">↻</span> Adaptabilité</div>
+      <div class="value"><span class="value-icon">♧</span> Esprit d’équipe</div>
+      <div class="value"><span class="value-icon">☺</span> Bon relationnel</div>
+      <div class="sub-h">Langues</div>
+      <div class="lang-row"><span class="chip">Français</span><span class="chip">Anglais</span><span class="chip">Arabe</span></div>
+    </aside>
+  </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="slabel">Expertise</div>
-  <h2 class="stitle">Compétences techniques</h2>
-  <div class="skwrap">
-    <div>
-      <div class="sgroup">
-        <div class="scat">Backend</div>
-        <div class="chips">
-          <span class="chip">Java / Java EE</span><span class="chip">Spring Boot</span><span class="chip">NestJS</span>
-          <span class="chip">Node.js</span><span class="chip">Django</span><span class="chip">PHP</span>
+  <section class="dark-section rv" id="competences">
+    <div class="skills-note hand" aria-hidden="true">Better Code,<br>Better Future ♡</div>
+    <div class="section-heading"><span class="section-symbol">✿</span><div><h2>Compétences</h2><p>Technologies et outils que j’utilise</p></div></div>
+    <div class="skills-grid">
+      <div class="skill-group"><h3>Backend</h3><ul>
+        <li data-i="java/java-original">Java / Java EE</li><li data-i="spring/spring-original">Spring Boot</li><li data-i="nestjs/nestjs-original">NestJS</li><li data-i="nodejs/nodejs-original">Node.js</li><li data-i="django/django-plain">Django</li><li data-i="php/php-original">PHP</li></ul></div>
+      <div class="skill-group"><h3>Frontend &amp; Mobile</h3><ul>
+        <li data-i="react/react-original">React</li><li data-i="nextjs/nextjs-original">Next.js</li><li data-i="angular/angular-original">Angular</li><li data-i="flutter/flutter-original">Flutter</li><li data-i="html5/html5-original">HTML / CSS</li><li data-i="javascript/javascript-original">JavaScript</li><li data-i="jquery/jquery-original">jQuery</li></ul></div>
+      <div class="skill-group"><h3>Bases de données</h3><ul>
+        <li data-i="mysql/mysql-original">MySQL</li><li data-i="postgresql/postgresql-original">PostgreSQL</li><li data-i="mongodb/mongodb-original">MongoDB</li></ul></div>
+      <div class="skill-group"><h3>DevOps &amp; Cloud</h3><ul>
+        <li data-i="azure/azure-original">Azure</li><li data-i="docker/docker-original">Docker</li><li data-i="apachekafka/apachekafka-original">Kafka</li><li>Camunda BPM</li><li>Nextcloud</li><li data-i="git/git-original">Git</li></ul></div>
+      <div class="skill-group"><h3>Automatisation &amp; IA</h3><ul>
+        <li>n8n</li><li>Workflows automatisés</li><li>WhatsApp Cloud API</li><li>Webhooks</li><li>Chatbots IA</li><li>Groq</li><li>Gemini</li><li>Ollama</li><li>Intégration de LLM</li></ul></div>
+      <div class="skill-group"><h3>IA &amp; Data</h3><ul>
+        <li>Big Data</li><li>Power BI</li><li>IA appliquée</li></ul></div>
+    </div>
+  </section>
+
+  <section id="projets">
+    <div class="projects-head rv"><h2>Mes projets</h2><p>Quelques réalisations en vidéo</p></div>
+    <div class="projects-grid">
+      <article class="project-card rv">
+        <div class="project-cover"><video controls playsinline preload="metadata" aria-label="Démonstration GED et chatbot IA"><source src="./public/Ged.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la lecture vidéo.</video></div>
+        <div class="project-body"><div class="pnum">01 — IA &amp; Document</div><h3>GED &amp; Chatbot IA</h3><p>Système intelligent de gestion documentaire avec workflow BPM, chatbot IA et automatisation du cycle de vie des documents.</p><div class="project-tags"><span>Next.js</span><span>Spring Boot</span><span>Kafka</span><span>Camunda</span><span>Nextcloud</span><span>PostgreSQL</span></div></div>
+      </article>
+      <article class="project-card rv">
+        <div class="project-cover auction"><video controls playsinline preload="metadata" aria-label="Démonstration de la plateforme d’enchères"><source src="./public/Enchere.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la lecture vidéo.</video></div>
+        <div class="project-body"><div class="pnum">02 — PFE Licence 2024 · Elite Tech Gabès</div><h3>Plateforme d’enchères en temps réel</h3><p>Gestion des enchères, communication instantanée via WebSocket, authentification sécurisée et système de commentaires.</p><div class="project-tags"><span>Angular</span><span>Spring Boot</span><span>MySQL</span><span>Java</span></div></div>
+      </article>
+      <article class="project-card rv">
+        <div class="project-cover shop"><video controls playsinline preload="metadata" aria-label="Démonstration de la plateforme e-commerce"><source src="./public/Video%20Project%205.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la lecture vidéo.</video></div>
+        <div class="project-body"><div class="pnum">03 — Stage de perfectionnement · Business Software</div><h3>Plateforme e-commerce</h3><p>Application de commerce électronique complète développée en collaboration : gestion des produits, panier et paiement sécurisé.</p><div class="project-tags"><span>React</span><span>Node.js</span><span>MySQL</span></div></div>
+      </article>
+      <article class="project-card rv">
+        <div class="project-cover dotnet"><video controls playsinline preload="metadata" aria-label="Démonstration du commerce digital .NET"><source src="./public/Video%20Project%204.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la lecture vidéo.</video></div>
+        <div class="project-body"><div class="pnum">04 — Commerce digital</div><h3>Plateforme de commerce digital</h3><p>Plateforme e-commerce .NET permettant la gestion des produits, des commandes et des utilisateurs, avec une architecture sécurisée et performante.</p><div class="project-tags"><span>.NET</span><span>Entity Framework</span><span>SQL Server</span></div></div>
+      </article>
+      <article class="project-card rv">
+        <div class="project-cover planning"><video controls playsinline preload="metadata" aria-label="Démonstration de la planification universitaire"><source src="./public/Video%20Project%206.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la lecture vidéo.</video></div>
+        <div class="project-body"><div class="pnum">05 — Planification universitaire</div><h3>Calendrier &amp; planification universitaire</h3><p>Gestion des emplois du temps avec planification automatique, détection des conflits et gestion des enseignants, salles, étudiants, groupes et matières.</p><div class="project-tags"><span>Angular</span><span>Flutter</span><span>MySQL</span></div></div>
+      </article>
+      <article class="project-card rv">
+        <div class="project-cover whatsapp"><video controls playsinline preload="metadata" aria-label="Démonstration de l’assistant IA WhatsApp"><source src="./public/demo_assistant_whatsapp_portfolio.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la lecture vidéo.</video></div>
+        <div class="project-body"><div class="pnum">06 — IA &amp; Automatisation</div><h3>Assistant IA conversationnel sur WhatsApp</h3><p>Assistant connecté à WhatsApp via la Cloud API : réponses automatiques, contexte des conversations, transfert à un humain par e-mail et fallback entre plusieurs LLM pour la continuité du service.</p><div class="project-tags"><span>n8n</span><span>WhatsApp Cloud API</span><span>Webhooks</span><span>Groq</span><span>Gemini</span><span>Ollama</span></div></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="card rv" id="certifications" style="margin-top:34px">
+    <div class="card-head"><h2>Certifications</h2><p>Formations et attestations obtenues</p></div>
+    <div class="cert-grid">
+      <div class="cert"><span class="cert-icon">🌍</span><span>Digital Competence — Projet HINTS, cofinancé par l’Union européenne · 22 septembre 2025</span></div>
+      <div class="cert"><span class="cert-icon">🌐</span><span>CCNA — Réseaux</span></div>
+      <div class="cert"><span class="cert-icon">☁️</span><span>Azure Fundamentals · Azure DevOps · Azure Web Apps</span></div>
+      <div class="cert"><span class="cert-icon">📊</span><span>Big Data</span></div>
+      <div class="cert"><span class="cert-icon">🤖</span><span>Power BI et Intelligence Artificielle</span></div>
+      <div class="cert"><span class="cert-icon">📈</span><span>Automarketing et planification stratégique</span></div>
+      <div class="cert"><span class="cert-icon">🎮</span><span>Gamification</span></div>
+      <div class="cert"><span class="cert-icon">🎓</span><span>Educational Innovation — Innovation pédagogique</span></div>
+      <div class="cert"><span class="cert-icon">🌱</span><span>Green Industries — Industries vertes</span></div>
+    </div>
+  </section>
+
+  <section class="timeline-wrap" id="experience">
+    <article class="timeline-card rv">
+      <div class="section-heading"><span class="section-symbol">♧</span><div><h2>Expérience &amp; Formation</h2><p>Mon parcours</p></div></div>
+      <div class="tl-block">
+        <div class="tl-label">Expérience professionnelle</div>
+        <div class="timeline">
+          <div class="timeline-item"><span class="timeline-icon">▣</span><div><time>2026 · Stage PFE Master</time><h3>Développeuse Full Stack &amp; Chatbot IA</h3><p class="where">QUALIFORT Solutions — Sfax</p><p class="desc">Plateforme intelligente de suivi opérationnel et de communication automatisée via chatbot : fonctionnalités web, gestion des dossiers, services de messagerie et notifications dans une architecture microservices. Spring Boot, Next.js, PostgreSQL et chatbot IA.</p></div></div>
+          <div class="timeline-item"><span class="timeline-icon">⌘</span><div><time>2024 · Stage PFE Licence</time><h3>Développeuse Full Stack</h3><p class="where">Elite Tech — Gabès</p><p class="desc">Plateforme de vente aux enchères : Angular et Spring Boot, enchères, temps réel, authentification sécurisée, ventes et commentaires.</p></div></div>
+          <div class="timeline-item"><span class="timeline-icon">✧</span><div><time>2023 · Stage de perfectionnement</time><h3>Développeuse Web Full Stack</h3><p class="where">Business Software</p><p class="desc">Application e-commerce avec React et Node.js, en équipe sur un projet complet.</p></div></div>
+          <div class="timeline-item"><span class="timeline-icon">⌂</span><div><time>2022 · Stage d’observation</time><h3>Stagiaire informatique</h3><p class="where">La Poste Tunisienne — Agareb</p><p class="desc">Observation des processus opérationnels et informatiques d’une entreprise établie.</p></div></div>
         </div>
       </div>
-      <div class="sgroup">
-        <div class="scat">Frontend & Mobile</div>
-        <div class="chips">
-          <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Angular</span>
-          <span class="chip">Flutter</span><span class="chip">HTML/CSS</span><span class="chip">JavaScript</span><span class="chip">jQuery</span>
+      <div class="tl-block" style="margin-bottom:0">
+        <div class="tl-label">Formation académique</div>
+        <div class="timeline">
+          <div class="timeline-item"><span class="timeline-icon">🎓</span><div><time>2025 — 2026</time><h3>Master Professionnel DSIR — Génie Logiciel</h3><p class="where">ISET Sfax</p><p class="desc">Architecture logicielle avancée, IA, systèmes distribués, génie du logiciel et cloud.</p></div></div>
+          <div class="timeline-item"><span class="timeline-icon">🎓</span><div><time>2023 — 2024</time><h3>Licence Développement des Systèmes d’Information</h3><p class="where">ISET Sfax</p><p class="desc">Développement web et mobile, bases de données, systèmes d’information et algorithmique.</p></div></div>
+          <div class="timeline-item"><span class="timeline-icon">🎓</span><div><time>2020 — 2021</time><h3>Baccalauréat</h3><p class="where">Lycée Agareb — Sfax</p></div></div>
         </div>
       </div>
-      <div class="sgroup">
-        <div class="scat">Bases de données</div>
-        <div class="chips">
-          <span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span>
-        </div>
-      </div>
-      <div class="sgroup">
-        <div class="scat">DevOps & Cloud</div>
-        <div class="chips">
-          <span class="chip">Azure</span><span class="chip">Docker</span><span class="chip">Kafka</span>
-          <span class="chip">Camunda BPM</span><span class="chip">Nextcloud</span><span class="chip">Git</span>
-        </div>
-      </div>
-      <div class="sgroup">
-        <div class="scat">Automatisation & IA</div>
-        <div class="chips">
-          <span class="chip">n8n</span><span class="chip">Workflows automatisés</span>
-          <span class="chip">WhatsApp Cloud API</span><span class="chip">Webhooks</span>
-          <span class="chip">Chatbots IA</span><span class="chip">Groq</span>
-          <span class="chip">Gemini</span><span class="chip">Ollama</span>
-          <span class="chip">Intégration de LLM</span>
-        </div>
-      </div>
-      <div class="sgroup">
-        <div class="scat">IA & Data</div>
-        <div class="chips">
-          <span class="chip">Big Data</span><span class="chip">Power BI</span><span class="chip">IA appliquée</span>
-        </div>
+    </article>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="card contact-form rv">
+      <span class="contact-kicker">Restons en contact</span>
+
+    <h2>Construisons quelque chose de grand.</h2>
+
+     <p>Je suis à la recherche d’opportunités professionnelles en développement Full Stack, IA et automatisation, en présentiel en Tunisie ou en télétravail, y compris à l’international. 
+        VVous recrutez ou avez un projet à développer ? Échangeons sur vos besoins et les solutions que je peux apporter.</p>
+    <div class="contact-opportunities">
+      <span class="contact-opportunities-icon" aria-hidden="true">✧</span>
+      <div>
+        <strong>Opportunités professionnelles</strong>
+        <p>CDI  · Freelance · Télétravail</p>
       </div>
     </div>
-    <div>
-      <div class="slabel" style="margin-bottom:14px;">Certifications</div>
-      
-<div class="clist">
-  <div class="citem">
-    <div class="cicon">🌍</div>
-    <div class="ctext">
-      Digital Competence — Projet HINTS, cofinancé par l’Union européenne · 22 septembre 2025
+
+    <div class="contact-opportunities">
+      <span class="contact-opportunities-icon" aria-hidden="true">↗</span>
+      <div>
+        <strong>Un projet en tête ?</strong>
+        <p>
+          Parlons de votre besoin et des solutions possibles.
+        </p>
+      </div>
+      </div>
+<form id="contact-form">
+
+
+  <div class="field">
+    <label for="contact-name">Nom</label>
+    <input
+      id="contact-name"
+      name="from_name"
+      type="text"
+      placeholder="Nom et prénom"
+      autocomplete="name"
+      required
+    >
+  </div>
+
+  <div class="field">
+    <label for="contact-email">E-mail</label>
+    <input
+      id="contact-email"
+      name="from_email"
+      type="email"
+      placeholder="nom@exemple.com"
+      autocomplete="email"
+      required
+    >
+  </div>
+
+  <div class="field">
+    <label for="contact-subject">Objet</label>
+    <input
+      id="contact-subject"
+      name="subject"
+      type="text"
+      placeholder="Objet de votre message"
+      required
+    >
+  </div>
+
+  <div class="field">
+    <label for="contact-message">Message</label>
+    <textarea
+      id="contact-message"
+      name="message"
+      placeholder="Décrivez votre projet ou votre demande…"
+      required
+    ></textarea>
+  </div>
+
+  <button
+    class="btn btn-primary"
+    id="contact-submit"
+    type="submit"
+    style="margin-top:14px"
+  >
+    Envoyer le message 
+  </button>
+
+  <p id="form-status" role="status" aria-live="polite"></p>
+</form>
+
+    </div>
+  
+<aside class="card contact-info rv">
+  <span class="contact-kicker">MES COORDONNÉES</span>
+  <h2>Parlons de votre projet.</h2>
+  <p>Ouverte aux opportunités en Tunisie et à l’international.</p>
+
+  <div class="contact-availability">
+    <span class="availability-dot"></span>
+    Disponible pour de nouvelles opportunités
+  </div>
+
+  <div class="contact-details">
+    <a class="detail" href="mailto:benbelgassemzina@gmail.com">
+      <span class="detail-icon">✉</span>
+      <span>
+        <small>E-MAIL</small>
+        benbelgassemzina@gmail.com
+      </span>
+    </a>
+
+    <a class="detail" href="tel:+21623878960">
+      <span class="detail-icon">☎</span>
+      <span>
+        <small>TÉLÉPHONE</small>
+        +216 23 878 960
+      </span>
+    </a>
+
+    <div class="detail">
+      <span class="detail-icon">⌖</span>
+      <span>
+        <small>LOCALISATION</small>
+        Sfax, Tunisie
+      </span>
     </div>
   </div>
 
-  <div class="citem">
-    <div class="cicon">🌐</div>
-    <div class="ctext">CCNA — Réseaux</div>
+  <div class="contact-skills">
+    <span>Full Stack</span>
+    <span>IA & Chatbots</span>
+    <span>Automatisation</span>
   </div>
 
-  <div class="citem">
-    <div class="cicon">🎮</div>
-    <div class="ctext">Gamification</div>
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/zina-ben-belgacem-b1761227b/"
+       aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+    <a href="https://github.com/zinabenbelgacem"
+       aria-label="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
+    <a href="https://www.facebook.com/zina.benbelgassem"
+       aria-label="Facebook" target="_blank" rel="noopener noreferrer">f</a>
+    <a href="mailto:benbelgassemzina@gmail.com"
+       aria-label="E-mail">✉</a>
   </div>
 
-  <div class="citem">
-    <div class="cicon">🎓</div>
-    <div class="ctext">Educational Innovation — Innovation pédagogique</div>
+  <div class="contact-note hand">
+    Une idée en tête ?<br>
+    <strong>Créons quelque chose ensemble ♡</strong>
   </div>
+</aside>
 
-  <div class="citem">
-    <div class="cicon">🌱</div>
-    <div class="ctext">Green Industries — Industries vertes</div>
-  </div>
+  </section>
 
-  <div class="citem">
-    <div class="cicon">☁️</div>
-    <div class="ctext">Azure Fundamentals · Azure DevOps · Azure Web Apps</div>
-  </div>
+  <section class="stats rv" aria-label="Chiffres clés">
+    <div class="stats-quote hand">Les grandes choses ne viennent pas du confort, mais de la persévérance ♡</div>
+    <svg class="mountain" viewBox="0 0 230 120" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><path d="M0 120 L70 50 L100 80 L150 15 L230 120Z" fill="#cfc8ff"/><path d="M60 120 L130 60 L170 95 L200 70 L230 120Z" fill="#b9aeff"/><path d="M150 15 V0 L168 7 L150 12" fill="#7657ff"/></svg>
+  </section>
 
-  <div class="citem">
-    <div class="cicon">📊</div>
-    <div class="ctext">Big Data</div>
-  </div>
-
-  <div class="citem">
-    <div class="cicon">🤖</div>
-    <div class="ctext">Power BI et Intelligence Artificielle</div>
-  </div>
-
-  <div class="citem">
-    <div class="cicon">📈</div>
-    <div class="ctext">Automarketing et planification stratégique</div>
-  </div>
+  <section class="quote-banner rv"><blockquote>« Le futur appartient à ceux<br>qui codent aujourd’hui. » <span>♡</span></blockquote></section>
 </div>
+</main>
 
-
-      <div class="slabel" style="margin:26px 0 10px;">Langues</div>
-      <div class="lrow">
-        <div class="lpill"><span class="ldot" style="background:var(--p);"></span>Français</div>
-        <div class="lpill"><span class="ldot" style="background:var(--a);"></span>Anglais</div>
-        <div class="lpill"><span class="ldot" style="background:var(--a2);"></span>Arabe</div>
-      </div>
-
-      <div class="slabel" style="margin:24px 0 10px;">Qualités</div>
-      <div class="qgrid">
-        <div class="qitem">Créativité</div>
-        <div class="qitem">Adaptabilité</div>
-        <div class="qitem">Esprit d'équipe</div>
-        <div class="qitem">Bon relationnel</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PARCOURS -->
-<section id="parcours">
-  <div class="slabel">Parcours</div>
-  <h2 class="stitle">Expérience & Formation</h2>
-  <div class="egrid">
-    <div>
-      <div class="ctitle">Expérience professionnelle</div>
-      <div class="tl">
-        <div class="ti">
-          <div class="tdate">Stage de Projet de Fin d’Études (PFE) · 2026</div>
-          <div class="trole">Développeuse Full Stack & Chatbot IA</div>
-          <div class="tplace">QUALIFORT Solutions — Sfax</div>
-          <div class="tdesc">Conception et développement d’une plateforme intelligente de suivi opérationnel et de communication automatisée via chatbot. Participation au développement des fonctionnalités web, à la gestion des dossiers et à l’intégration de services de messagerie et de notifications dans une architecture orientée microservices. Environnement technique : Spring Boot, Next.js, PostgreSQL et chatbot IA.</div>
-        </div>
-        <div class="ti">
-          <div class="tdate">Stage Fin d'Études</div>
-          <div class="trole">Développeuse Full Stack</div>
-          <div class="tplace">Elite Tech — Gabès</div>
-          <div class="tdesc">Développement d'une plateforme de vente aux enchères innovante. Angular & Spring Boot, gestion des enchères, communication temps réel, authentification sécurisée, gestion des ventes et commentaires.</div>
-        </div>
-        <div class="ti">
-          <div class="tdate">Stage de Perfectionnement</div>
-          <div class="trole">Développeuse Web Full Stack</div>
-          <div class="tplace">Business Software</div>
-          <div class="tdesc">Développement d'une application e-commerce avec React et Node.js. Collaboration en équipe sur un projet complet de commerce électronique.</div>
-        </div>
-        <div class="ti">
-          <div class="tdate">Stage d'Observation</div>
-          <div class="trole">Stagiaire Informatique</div>
-          <div class="tplace">La Poste Tunisienne — Agareb</div>
-          <div class="tdesc">Observation et apprentissage des processus opérationnels et informatiques dans un environnement d'entreprise établi.</div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="ctitle">Formation académique</div>
-      <div class="tl">
-        <div class="ti">
-          <div class="tdate">2025 — 2026</div>
-          <div class="trole">Master Professionnel DSIR — Génie Logiciel</div>
-          <div class="tplace">ISET Sfax</div>
-          <div class="tdesc">Spécialisation en architecture logicielle avancée, IA, systèmes distribués, génie du logiciel et développement cloud.</div>
-        </div>
-        <div class="ti">
-          <div class="tdate">2023 — 2024</div>
-          <div class="trole">Licence Développement des Systèmes d'Information</div>
-          <div class="tplace">Institut Supérieur des Études Technologiques de Sfax</div>
-          <div class="tdesc">Formation complète en développement web, mobile, bases de données, systèmes d'information et algorithmique.</div>
-        </div>
-        <div class="ti">
-          <div class="tdate">2019 — 2021</div>
-          <div class="trole">Baccalauréat</div>
-          <div class="tplace">Lycée Agareb — Sfax</div>
-          <div class="tdesc"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="slabel">Contact</div>
-  <h2 class="stitle">Travaillons ensemble</h2>
-  <div class="cwrap">
-    <div class="cinfo">
-      <h3>Un projet en tête ?</h3>
-      <p>Disponible pour des stages, missions freelance ou opportunités à temps plein. N'hésitez pas à me contacter pour échanger sur vos besoins technologiques.</p>
-      <div class="clinks">
-        <a href="mailto:benbelgassemzina@gmail.com" class="clink">
-          <div class="clico" style="background:rgba(110,231,255,.1);color:var(--p);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          </div>
-          <div><div class="cllbl">Email</div>benbelgassemzina@gmail.com</div>
-        </a>
-        <a href="tel:+21623878960" class="clink">
-          <div class="clico" style="background:rgba(184,169,255,.1);color:var(--a);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <div><div class="cllbl">Téléphone</div>+216 23 878 960</div>
-        </a>
-        <a href="https://www.linkedin.com/in/zina-ben-belgacem-b1761227b/" target="_blank" class="clink">
-          <div class="clico" style="background:rgba(10,102,194,.15);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </div>
-          <div><div class="cllbl">LinkedIn</div>Zina Ben Belgacem</div>
-        </a>
-        <a href="https://github.com/zinabenbelgacem" target="_blank" class="clink">
-          <div class="clico" style="background:rgba(255,255,255,.05);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--m)"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-          </div>
-          <div><div class="cllbl">GitHub</div>zinabenbelgacem</div>
-        </a>
-        <a href="https://www.facebook.com/zina.benbelgassem" target="_blank" class="clink">
-          <div class="clico" style="background:rgba(24,119,242,.12);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </div>
-          <div><div class="cllbl">Facebook</div>Zina Ben Belgassem</div>
-        </a>
-      </div>
-    </div>
-
-    <form id="contact-form" class="cform">
-      <div class="fg">
-        <label class="flbl" for="contact-name">Votre nom</label>
-        <input class="finp" id="contact-name" type="text" name="from_name"
-               placeholder="Nom et prénom" autocomplete="name" required>
-      </div>
-      <div class="fg">
-        <label class="flbl" for="contact-email">Votre e-mail</label>
-     <input class="finp" id="contact-email" type="email" name="from_email"
-       placeholder="nom@exemple.com" autocomplete="email" required>
-      </div>
-      <div class="fg">
-        <label class="flbl" for="contact-subject">Objet</label>
-        <input class="finp" id="contact-subject" type="text" name="subject"
-               placeholder="Objet de votre message" required>
-      </div>
-      <div class="fg">
-        <label class="flbl" for="contact-message">Message</label>
-        <textarea class="finp" id="contact-message" name="message"
-                  placeholder="Décrivez votre projet ou votre demande..." rows="5" required></textarea>
-      </div>
-      <button type="submit" class="bsub" id="contact-submit">Envoyer le message →</button>
-      <p id="form-status" role="status" aria-live="polite"></p>
-    </form>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <div class="finner">
-    <div class="ftop">
-      <div class="fb">
-        <div class="fbname">Zina<span>.</span>dev</div>
-        <p>Développeuse Full Stack · Master Professionnel DSIR — Génie Logiciel<br>Spécialisée en développement Full Stack, chatbots IA et automatisation avec n8n.<br>Basée à Sfax, Tunisie.</p>
-        <div class="srow">
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/zina-ben-belgacem-b1761227b/" target="_blank" class="sbtn li" aria-label="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <!-- Facebook -->
-          <a href="https://www.facebook.com/zina.benbelgassem" target="_blank" class="sbtn fb2" aria-label="Facebook">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <!-- GitHub -->
-          <a href="https://github.com/zinabenbelgacem" target="_blank" class="sbtn gh" aria-label="GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--m)"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="fcol">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="#projets">Projets</a></li>
-          <li><a href="#skills">Compétences</a></li>
-          <li><a href="#parcours">Parcours</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="fcol">
-        <h4>Contact direct</h4>
-        <ul>
-          <li><a href="mailto:benbelgassemzina@gmail.com">benbelgassemzina@gmail.com</a></li>
-          <li><a href="tel:+21623878960">+216 23 878 960</a></li>
-          <li><a href="https://github.com/zinabenbelgacem" target="_blank">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/zina-ben-belgacem-b1761227b/" target="_blank">LinkedIn</a></li>
-          <li><a href="https://www.facebook.com/zina.benbelgassem" target="_blank">Facebook</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="fbot">
-      <p>© 2026 Zina Ben Belgacem — Tous droits réservés</p>
-      <div class="made">Fait avec <span class="heart">♥</span> à Sfax, Tunisie</div>
-    </div>
+  <div class="footer-inner">
+    <div><a class="brand" href="#accueil"><span class="brand-mark">&lt;/&gt;</span><span>Zina Ben Belgacem</span></a><div class="footer-copy">Développeuse Full Stack · IA &amp; automatisation · Sfax, Tunisie</div></div>
+    <div class="footer-links"><a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#experience">Parcours</a><a href="#contact">Contact</a></div>
   </div>
+  <div class="copyright"><span>© 2026 Zina Ben Belgacem. Tous droits réservés.</span><span>Fait avec ♥ à Sfax</span></div>
 </footer>
 
-<script>
-const cg=document.getElementById('cg');
-document.addEventListener('mousemove',e=>{cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px';});
 
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.style.opacity='1';
-      e.target.style.transform='translateY(0)';
-      io.unobserve(e.target);
-    }
-  });
-},{threshold:0.08});
-
-document.querySelectorAll('.pcard,.chip,.ti,.clink,.acard,.citem,.lpill,.qitem,.spill').forEach((el,i)=>{
-  el.style.opacity='0';
-  el.style.transform='translateY(18px)';
-  el.style.transition=`opacity .6s ease ${i*.035}s,transform .6s ease ${i*.035}s`;
-  io.observe(el);
-});
-</script>
-<!-- EmailJS : remplace les 3 identifiants ci-dessous par ceux de ton compte EmailJS. -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 <script>
-  const EMAILJS_PUBLIC_KEY = "HeaGxeP18uOPGtZIc";
-  const EMAILJS_SERVICE_ID = "service_fdmt1wr";
-  const EMAILJS_TEMPLATE_ID = "template_dkoep07";
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  const button = document.getElementById("contact-submit");
 
-  const contactForm = document.getElementById("contact-form");
-  const contactStatus = document.getElementById("form-status");
-  const contactSubmit = document.getElementById("contact-submit");
-
-  // Initialiser EmailJS une seule fois.
-  emailjs.init(EMAILJS_PUBLIC_KEY);
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", async function (event) {
-      event.preventDefault();
-
-      if (!navigator.onLine) {
-        contactStatus.textContent =
-          "Vérifiez votre connexion Internet, puis réessayez.";
-        contactStatus.style.color = "var(--a2)";
-        return;
-      }
-
-      contactSubmit.disabled = true;
-      contactSubmit.classList.add("loading");
-      contactSubmit.textContent = "Envoi en cours…";
-      contactStatus.textContent = "";
-
-      try {
-        await emailjs.sendForm(
-          EMAILJS_SERVICE_ID,
-          EMAILJS_TEMPLATE_ID,
-          contactForm
-        );
-
-        contactStatus.textContent =
-          "Votre message a été envoyé. Merci pour votre contact !";
-        contactStatus.style.color = "var(--p)";
-        contactForm.reset();
-      } catch (error) {
-        console.error("EmailJS error:", error);
-        contactStatus.textContent =
-          "L’envoi a échoué. Vérifiez la configuration EmailJS et réessayez.";
-        contactStatus.style.color = "var(--a2)";
-      } finally {
-        contactSubmit.disabled = false;
-        contactSubmit.classList.remove("loading");
-        contactSubmit.textContent = "Envoyer le message →";
-      }
-    });
+  // Vérifier que les éléments nécessaires existent
+  if (!form || !status || !button || !window.emailjs) {
+    console.error("Formulaire ou bibliothèque EmailJS introuvable.");
+    return;
   }
-</script>
 
-<script>
-document.querySelectorAll('.yt-lazy').forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    var id = btn.dataset.id;
-    if (location.protocol === 'file:') {
-      window.open('https://www.youtube.com/watch?v=' + id, '_blank', 'noopener');
-      return;
+  // Initialiser EmailJS
+  emailjs.init("HeaGxeP18uOPGtZIc");
+
+  // Afficher un message avec le style correspondant
+  function showFormStatus(message, type) {
+    status.textContent = message;
+    status.className = "is-visible is-" + type;
+    status.setAttribute(
+      "role",
+      type === "error" ? "alert" : "status"
+    );
+  }
+  function hideFormStatusAfterDelay(delay = 6000) {
+  setTimeout(() => {
+    status.classList.remove("is-visible");
+    status.textContent = "";
+  }, delay);
+}
+
+  // Soumission du formulaire
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    // Vérifier les champs obligatoires
+    if (!form.reportValidity()) return;
+
+    // État de chargement
+    button.disabled = true;
+    button.textContent = "Envoi en cours…";
+    button.classList.add("send-loading");
+
+    showFormStatus(
+      "Envoi de votre message… Merci de patienter.",
+      "loading"
+    );
+
+    try {
+      const result = await emailjs.sendForm(
+        "service_fdmt1wr",
+        "template_dkoep07",
+        form
+      );
+
+      console.log("EmailJS :", result.status, result.text);
+
+      if (result.status === 200) {
+  showFormStatus(
+    "Message envoyé avec succès ! Merci pour votre message. Je vous répondrai dès que possible.",
+    "success"
+  );
+
+  form.reset();
+  hideFormStatusAfterDelay(6000);
+} else {
+  showFormStatus(
+    "L’envoi n’a pas pu être confirmé. Veuillez réessayer.",
+    "error"
+  );
+}
+    } catch (error) {
+      console.error("Erreur EmailJS :", error);
+
+      showFormStatus(
+        "Impossible d’envoyer votre message pour le moment. Vérifiez votre connexion et réessayez.",
+        "error"
+      );
+    } finally {
+      button.disabled = false;
+      button.classList.remove("send-loading");
+      button.textContent = "Envoyer le message →";
     }
-    var f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
-    f.title = btn.dataset.title;
-    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-    f.allowFullscreen = true;
-    f.referrerPolicy = 'strict-origin-when-cross-origin';
-    btn.replaceWith(f);
   });
-});
-</script>
-<script>
-document.querySelectorAll('.pthumb video').forEach(video => {
-    video.addEventListener('mouseenter', () => {
-        video.play().catch(() => {});
-    });
 
-    video.addEventListener('mouseleave', () => {
-        video.pause();
-    });
+  console.log("Formulaire de contact initialisé.");
 });
 </script>
+
+
 </body>
 </html>
